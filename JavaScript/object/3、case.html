@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //case1:
+    function Button(height,width,background) {
+      this.height = height;
+      this.width = width;
+      this.background = background;
+    };
+    var click = new Button(100,200,'red');
+    console.log(click);
+    for ( k in click) {
+      console.log(click[k]);
+    }
+    console.log('----------------------')
+    //case2: use literial
+    var computer = {
+      color: 'blank',
+      weight: 100,
+      brand: 'lenvo',
+      type: 26,
+      Can: function (what) {
+        console.log('can' + ' ' + what)
+      }
+    };
+    console.log(computer);
+    computer.Can('playComputer');
+    console.log(computer['brand']);    // objectName['property']
+    for ( k in computer) {
+      console.log(computer[k]);
+    }
+    console.log('----------------------')
+    //case3: use 'new Object'
+    var car = new Object();
+    car.weight = 500;
+    car.color = 'white';
+    car.brand = 'bolean';
+    car.function = function(what) {
+      console.log('take' + ' ' + what)
+    };
+    console.log(car.color);
+    console.log(car['weight']);
+    car.function('man');
+    for ( k in car) {
+      console.log(car[k])
+    };
+  </script>
+</head>
+<body>
+
+</body>
+</html>

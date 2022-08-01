@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单新增元素及属性</title>
+</head>
+<body>
+    <form id="textform">
+        <input type="submit"  formmethod="get" formenctype="text/plain" name="s1" value="v1" formaction="xx.jsp">提交到xx.jsp页面
+        <input type="submit"  formmethod="post" formenctype="multipart/form-data" name="s2" value="v2" formaction="xx.jsp">提交到xx.jsp页面
+        <input type="submit"   formenctype="application/x-www-form-urlencoded" name="s3" value="v3" formaction="xx.jsp">提交到xx.jsp页面
+    </form>
+    <form id="textform">
+        <input type="submit"  formtarget="framename" formmethod="get" formenctype="text/plain" name="s1" value="v1" formaction="xx.jsp">提交到xx.jsp页面
+        <input type="text" maxlength="10" placeholder="请输入10位晶编" autofocus required>
+        <input type="submit">
+    </form>
+    </br>
+    <script>
+        function setvalue(){
+            var lable = document.getElementById("lable")
+            var textbox = lable.control;
+            textbox.value="ZYS2201A0101"
+        }
+    </script>
+    <form>
+        <label id="lable">
+            晶体编号
+            <input id="txt_zip" maxlength="12" placeholder="请输入12位晶体编号">
+        </label>
+        <input type="button" value="设置默认值" onclick="setvalue()">
+    </form>
+    </br>
+
+    <form>
+        异常原因
+        <input type="text" name="greeting" list="greetings" aria-autocomplete="on">
+        <datalist id="greetings" style="none">
+            <option value="首段成晶差"></option>
+            <option value="尾段成晶差"></option>
+            <option value="整炉成晶差"></option>
+        </datalist>
+    </form>
+    </br>
+    <form>
+        <input type="checkbox" indeterminate id="cb">属性测试
+        <script>
+            var cb = document.getelementbyid("cb");
+            cb.indeterminate = ture;
+        </script>
+    </form>
+    </br>
+    <form action="3_链接属性及使用.html" method="get">
+        姓名：<input type="text" name="text">
+        <input type="image" src="../images/sea.jpeg" alt="编辑" width="3%" height="3%">
+    </form>
+</body>
+</html>

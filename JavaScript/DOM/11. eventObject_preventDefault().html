@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>事件对象之阻止默认事件</title>
+  </head>
+  <body>
+    <a href="www.baidu.com">baidu</a>
+    <form action="#">
+      <input type="submit">
+    </form>
+
+  </body>
+  <script>
+    /* preventDefault */
+    // stynax : target.addEventListener(type,function (e) { e.preventDefault})
+    var a = document.querySelector('a');
+    a.addEventListener('click',function (e) {
+      e.preventDefault();
+    })
+
+    var submit = document.querySelector('input');
+    submit.addEventListener('click',function (e) {
+      e.preventDefault();
+    })
+  </script>
+</html>

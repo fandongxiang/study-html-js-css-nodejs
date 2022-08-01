@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+        position: absolute;               /*Forth: define position:absolute*/
+        right: 10px;
+        top: -20px;
+        width: 0;
+        height: 0;                        /*First : define width and height equal to 0*/
+        border: 10px solid transparent;   /*Second: define border-color equal to 'transparent'*/
+        border-bottom-color: gray;        /*Third: define which direction you want target*/
+    }
+    .parent {
+        position: relative;               /*Last: define parent-box position:relative*/
+        height: 200px;
+        width: 100px;
+        background-color: gray;
+        margin-top: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parent">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

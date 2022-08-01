@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vertical-align</title>
+  <style>
+    img {
+        vertical-align: bottom;           /*align with the bottom line*/
+    }
+    /*declare font*/
+    @font-face {
+        font-family: 'icomoon';
+        src:  url('fonts/icomoon.eot?ym6dwz');
+        src:  url('fonts/icomoon.eot?ym6dwz#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?ym6dwz') format('truetype'),
+        url('fonts/icomoon.woff?ym6dwz') format('woff'),
+        url('fonts/icomoon.svg?ym6dwz#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+    }
+    span {
+        display: inline-block;            /*NOTE: vertical-align only valid for inline-block*/
+        font-family: icomoon;             /*define font-family*/
+        font-size: 50px;
+        vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <!--note: vertical-align only valid for inline block elements align with text-->
+  <img src="sea.jpeg">beautiful sea ggg </br>
+  <span></span>Can you conect to WIFI?
+</body>
+</html>

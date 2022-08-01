@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <script src="JQuery.js"></script>
+  </head>
+  <body>
+    <div>我是div1</div>
+    <div class="nav">我是nav</div>
+    <ul>
+      <li>我是li1</li>
+      <li>我是li2</li>
+      <li>我是li3</li>
+      <li>我是li4</li>
+      <li>我是li5</li>
+    </ul>
+    <ol>
+      <li>我是li1</li>
+      <li>我是li2</li>
+      <li>我是li3</li>
+      <li>我是li4</li>
+      <li>我是li5</li>
+    </ol>
+    <img src="image/筛选方法.png" alt="" width="500px">
+    <script>
+      //一、选择和CSS选择器方式一样
+      console.dir($('.nav'));
+      console.log($('ul li'));
+
+      //二、隐式迭代：遍历内部DOM元素，相当于遍历伪数组
+      //原生js中给小li添加背景颜色
+      var li = document.querySelectorAll('li');
+      for (var i = 0; i < li.length; i++) {
+        li[i].style.backgroundColor = 'pink';
+      };
+      //jQuery中给小li添加背景颜色
+      $('li').css('backgroundColor','gray');
+
+      //三、筛选选择器：
+      $('ul li:first').css('background','red');
+      $('ul li:last').css('background','green');
+      $('ul li:eq(2)').css('background','gold');
+      
+      //四、筛选方法
+      
+
+    </script>
+  </body>
+</html>

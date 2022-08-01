@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JQuery.js"></script>
+</head>
+<body>
+    <form action="/ajax/" id="f1">
+        姓名 <input type="text" name="name">
+        年龄 <input type="text" name="age">
+        性别 <input type="text" name="gender">
+        <input type="submit" value="提交" id="btn">
+    </form>
+    <script>
+$(function () {
+$('#f1').submit(function(e) {
+e.preventDefault()
+console.log($(this).serialize());
+
+var a = $(this).serializeArray()
+var b = {}
+$.map(a,function (n,i) {
+b[n['name']] = n['value']
+})
+const data = JSON.stringify(b)
+console.log(data);
+
+
+})
+})
+    </script>
+</body>
+</html>

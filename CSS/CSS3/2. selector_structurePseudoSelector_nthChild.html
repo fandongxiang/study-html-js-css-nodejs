@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>结构伪类选择器</title>
+    <style>
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      /*选择标签是E的第一个孩子 E:first-child*/
+      .box :first-child {          /* note: 1、先拿到一组元素 2、与前面标签比较，是就选中，不是就不选*/
+        color: pink;
+      }
+      .box div:nth-child(odd) {
+        color: red;                   /*注意：第一个没选中是因为a不是div，第2个和8个div是因为优先级*/
+      }
+      /*选择第n个E:nth-child(n)*/
+      .box div:nth-child(3) {
+        color: darkorange;
+      }
+      /*选择标签是E的最后一个 E:last-child*/
+      .box div:last-child {
+        color: blue;
+      }
+      /*nth-child如果是数字从1开始算，如果是n从0开始算，但会把n省略*/
+      /*2n选择偶数个孩子*/
+      /*2n+1选择奇数个孩子*/
+      /*-n+3选择前3个孩子*/
+      ul li:nth-child(-n+3) {
+        color: red;
+      }
+      /*-n+6选择第6个以后的孩子*/
+      ul li:nth-child(n+6) {
+        color: darkorange;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!--结构伪类选择器执行顺序：先拿到一组元素，然后判断该元素位置与前面的标签是否相同，相同就选中-->
+    <div class="box">
+      <a href="@">我不是div</a>
+      <div>我是的第1个div</div>
+      <div>我是的第2个div</div>
+      <div>我是的第3个div</div>
+      <div>我是的第4个div</div>
+      <div>我是的第5个div</div>
+      <div>我是的第6个div</div>
+      <div>我是的第7个div</div>
+      <div>我是的第8个div</div>
+    </div>
+    <ul>
+      <li>我是第1个li</li>
+      <li>我是第2个li</li>
+      <li>我是第3个li</li>
+      <li>我是第4个li</li>
+      <li>我是第5个li</li>
+      <li>我是第6个li</li>
+      <li>我是第7个li</li>
+      <li>我是第8个li</li>
+    </ul>
+  </body>
+</html>

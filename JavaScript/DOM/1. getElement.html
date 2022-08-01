@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>getElement</title>
+  </head>
+  <body>
+    <div id="box">
+      <ul class="header">
+        <li></li>
+        <li class="li2"></li>
+        <li></li>
+      </ul>
+      <ul>
+        <li></li>
+        <li class="ulli2"></li>
+        <li></li>
+      </ul>
+    </div>
+    <script>
+      //1. getElement
+      var box = document.getElementById('box');
+      console.log(box);
+      console.log(typeof box);
+      console.log(box.getElementsByTagName('ul'));          //getElementById('idName') is not a array
+      console.log('----------------------------------')
+
+      var div = document.getElementsByTagName('div')
+      console.log(typeof div);
+      console.log(div);
+      console.log(div[0].getElementsByTagName('ul'));     //getElementsByTagName('tagName') is pseudo array
+      console.log('----------------------------------')
+
+      var header = document.getElementsByClassName('header');
+      console.log(header);
+      console.log(header[0].getElementsByTagName('li'));   //getElementsByClassName('className') is pseudo array
+      console.log('----------------------------------')
+
+      //note : return element is pseudo array
+      //get the second li from the second ul
+      var ul = document.getElementsByTagName('ul')[1];
+      console.log(ul.getElementsByTagName('li')[1]);        //note: ul is pseudo array
+      console.log('----------------------------------')
+      //Print the li from the second ul one-by-one
+      for (var i = 0; i < ul.getElementsByTagName('li').length; i++) {
+        console.log(ul.getElementsByTagName('li')[i]);
+      }
+      console.log('111111111111111111111111111111111')
+
+      //2. querySlector()
+      var ul = document.querySelector('ul');
+      console.log(ul);
+      console.log(ul.querySelector('li'));                  //querySelector('ul') is the first element
+      console.log('----------------------------------')
+
+      var ulall = document.querySelectorAll('ul');
+      console.log(ulall);
+      console.log(ulall[0].querySelector('li'));           //querySelectorAll('ul') is an array
+      console.log('----------------------------------')
+    </script>
+
+    <script>
+      //1. Get body element
+      console.log(document.body);                          //note: document.body
+      console.log('----------------------------------')
+
+      //2. Get HTML element
+      console.log(document.documentElement);               //note: document.documentElement
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            /* background-color: pink; */
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 1. widow.onload 只能触发一个，必须所有js，dom，图片加载完才执行
+        window.onload = function () {
+            const div = document.querySelector('div')
+            div.style.backgroundColor = 'pink'
+        }
+        // 2. window.addEventListener('load',function() {}) 可以注册多个
+        window.addEventListener('load',function() {
+            const div = document.querySelector('div')
+            div.style.display = 'none'
+        })
+        // 3. document.addEventListener('DOMContentLoaded',function() {}) 仅DOM加载完毕就执行
+        document.addEventListener('DOMContentLoaded',function() {
+            alert('hello js')
+        })
+    </script>
+    <div>
+
+    </div>
+</body>
+
+</html>

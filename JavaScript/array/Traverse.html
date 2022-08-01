@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>遍历</title>
+</head>
+<body>
+<script>
+  //遍历数组：将数组元素从头到尾访问一次
+  var arr = ['fan','dong','xiang'];
+  for (var i = 0; i <3; i++) {
+    console.log(arr[i]); //计数器当索引号使用
+  };
+  // i从0开始，小于号
+  var arr1 = ['关羽','张飞','马超','赵云','黄忠','刘备','姜维'];
+  for (var i = 0; i < 7; i++) {
+    console.log(arr1[i]);
+  }
+
+  //要点：变动数组中的索引；变动数组中的元素；
+
+  //数组长度；数组名.length；
+  console.log(arr1.length);
+  for (var i = 0; i < arr1.length; i++) {  //动态检测数组长度
+    console.log(arr1[i]);
+  };
+
+  //数组元素求和，平均值
+  var arr2 = [2,6,1,7,4];
+  var sum = 0;
+  var average = 0;
+  for (var i = 0; i < arr2.length; i++) {
+    sum += arr2[i];
+  };
+  average = sum / arr2.length;
+  console.log(sum,average);
+
+  //求数组中的最大值
+  var arr3 = [5,6,32,21,10];
+  var max = arr3[0];     //将第一个值赋值给max，采用‘打擂台’方式
+  for (var i = 0; i< arr3.length; i++) {
+    if (arr3[i] >= max) {  //遍历数组嵌套if，重复赋值max
+      max = arr3[i]
+    }
+  };
+  console.log(max);
+  //将数组转化为字符串
+  var arr4 = ['fan','dong','xiang'];
+  var str = '';
+  var sep = '!'
+  for (var i = 0; i < arr4.length; i++) {
+    str = str + arr4[i] + sep;  //字符串追加方式
+  };
+  console.log(str);
+
+  //新增数组元素:将数组看成变量赋值
+  //方法一：扩容数组长度
+  /*arr5.length = 5;*/
+  //方法二：追加数组元素，修改索引号
+  var arr5 = ['fan','dong','xiang'];
+  arr5[3] = 'love';
+  console.log(arr5);
+  //批量新增数组元素
+  var arr6 = ['fandongxiang','能','活','到'];
+  for (var i = 1; i < 11; i++) {
+    arr6[i+3] = i;
+  };
+  console.log(arr6);
+
+  //筛选数组：将数组中>10的值筛选出来放入新数组;
+  var arr7 = [10,5,16,58,1,2,56];
+  var arr8 = [];
+  var j = 0;
+  for (var i =0 ; i < arr7.length; i++) {
+    if (arr7[i] > 10) {
+      /*arr8[j] = arr7[i];
+      j++;*/
+      arr8[arr8.length] = arr7[i]  //更方便，巧用数组长度比数组索引号大1；
+    }
+  };
+  console.log(arr8);
+
+
+</script>
+</body>
+</html>

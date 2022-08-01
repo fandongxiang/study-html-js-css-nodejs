@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量定义</title>
+</head>
+<body>
+    <h3>作用域范围</h3>
+   var只有在函数作用域中才有块级属性，而let和const在块级中就有
+    <h3>可重复声明性</h3>
+    <ol>
+        <li>在相同的块或作用域中，var、let和const都不能互相重复声明</li>
+        <li>在相同的块或作用域中，var可以重复声明var，但let和const不行</li>
+        <li>在不同的块或作用域中，let和const可重复声明（块级作用域特点）</li>
+    </ol>
+    <h3>可重复赋值性</h3>
+    <ol>
+        <li>var和let定义变量后，可对变量重复赋值</li>
+        <li>const定义变量后，不可对变量重复赋值</li>
+    </ol>
+    <h3>声明及初始化</h3>
+    <ol>
+        <li>let和const必须先声明再引用，而var不用</li>
+        <li>const声明的同时必须初始化，而let和var不用</li>
+    </ol>
+    <h3>建议使用优先性</h3>
+    能用const的时候先用const声明这是一个不可重新更改的值，其次用let，最后用var
+    //const不可重复赋值
+    <p id="demo"></p>
+    <script>
+        const LastName = "fan";
+        LastName = "wen";
+        document.getElementById("demo").innerHTML = LastName ;
+    </script>
+    //let和const必须先声明再使用
+    <p id="demo1"></p>
+    <script>
+        document.getElementById("demo1").innerHTML = a;
+        let a = 5;
+    </script>
+    //const必须声明的同时初始化赋值
+    <p id="demo2"></p>
+    <script>
+        const b = 28;
+        document.getElementById("demo2").innerHTML = b;
+    </script>
+</body>
+</html>

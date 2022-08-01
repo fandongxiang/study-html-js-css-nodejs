@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xhr发起请求</title>
+    <script src="./JQuery.js"></script>
+    <script src="./template-web.js"></script>
+</head>
+<body>
+    <form action="/">
+        书名 <input type="text" name="bookname"> 作者 <input type="text" name="author"> 
+        出版社 <input type="text" name="publisher" id=""> <button type="submit">提交</button>
+    </form>
+    
+    <button>请求图书</button>
+    <table border="1" id="tab">
+
+    </table>
+
+    <script type="text/html" id="bookid">
+        {{each data}}
+        <tr>
+            <td>{{$value['id']}}</td>
+            <td>{{$value.bookname}}</td>
+            <td>{{$value.author}}</td>
+            <td>{{$value.publisher}}</td>
+        </tr>
+        {{/each}}
+    </script>
+
+    <script>
+        // xhr(XMLHTTPRequest) 发起请求步骤
+        // 1. 创建 xhr 对象
+        var xhr = new XMLHttpRequest()
+
+        // 2. 调用 xhr.open('请求类型','URL') 函数创建请求
+        xhr.open('GET','http://127.0.0.1:3007/api/getbook')
+
+        // 3. 调用 xhr.send() 函数发起请求
+        xhr.send()
+
+        // 4. 监听 xhr.onreadystatechange 事件
+        xhr.onreadystatechange = function () {
+            // 4.1 监听服务器的请求状态 xhr.readystate ；服务器的相应状态 xhr.status
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 4.2 获取服务器返回的数据 xhr.responseText
+                let  bookinfo = xhr.responseText
+
+                // 4.3 将 JSON 字符串转换为 js 对象
+                bookinfo = JSON.parse(bookinfo)
+
+                const bookStr = template('bookid',{data:bookinfo})
+                $('#tab').append(bookStr)
+                console.log(bookStr)
+                console.log(xhr.responseText);
+                console.log(typeof xhr.responseText);                                  // 注意：原生 xhr 返回的是字符串string
+            }
+        }
+    </script>
+
+    <script>
+        $.ajax({
+            type:'get',
+            url: 'http://127.0.0.1:3007/api/getbook',
+            success: function(res) {
+                console.log(res);
+                console.log(typeof res);                                              // 注意： jQuery 中 res 返回的是对象object
+            }
+        })
+    </script>
+</body>
+</html>

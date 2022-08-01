@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+  <h3>对象是存储多个值的容器</h3>
+    <b>函数格式: var 对象{属性：“属性值”，属性：“属性值”}</b>
+    <h3>对象方法</h3>
+    <b>方法是以函数形式存储在对象里的属性</b>
+    <p id="demo"></p>
+    <script>
+        var person = {
+            firstname:"fan",
+            lastname:"dongxiang",
+            fullname:function(){
+                return this.firstname + " " + this.lastname;
+            }
+        }
+        document.getElementById("demo").innerHTML = person.fullname();
+    </script>
+    <h3>访问对象属性</h3>
+    语法：objectName.pro或者objectName["propertyName"]
+    <h3>访问对象方法</h3>
+    语法：objectName.methodName()
+</body>
+</html>

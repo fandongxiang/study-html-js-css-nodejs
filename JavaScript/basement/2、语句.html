@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>语句</title>
+    <style>
+        table{
+            border-collapse:collapse;
+        }
+        table,th,td{
+            padding:10px;
+        }
+        th{
+            background-color: black;
+            color: #ebe8e5;
+        }
+        .t2{
+            background-color: #c1e4e4;
+        }
+    </style>
+</head>
+<body>
+    <h2>js是web浏览器“执行”的“指令”</h2>
+    <h3>语句由值、运算符、表达式（由变量、运算符、值构成）、关键词（告诉浏览器执行的动作）、注释构成</h3>
+    <h3>js代码块</h3>
+    <p>用｛...｝括起来，作用是定义一系列按顺序同时执行的代码</p>
+    <button type="button" onclick="myFunction()">点击我！</button>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        function myFunction() {
+            document.getElementById("demo1").innerHTML = "你好";
+            document.getElementById("demo2").innerHTML = "祥仔";
+        }
+    </script>
+    <h3>JavaScrip中的关键词</h3>
+    <table border="1px">
+        <tr>
+            <th>关键词</th>
+            <th>描述</th>
+        </tr>
+        <tr>
+            <td>break</td>
+            <td>终止switch或循环</td>
+        </tr>
+        <tr class="t2">
+            <td>continue</td>
+            <td>终止循环并在顶端开始</td>
+        </tr>
+        <tr>
+            <td>debugger</td>
+            <td>停止运行JavaScript，并运行调试函数（如果可用）</td>
+        </tr>
+        <tr class="t2">
+            <td>do...while</td>
+            <td>执行语句块，并在条件为真时循环执行代码块</td>
+        </tr>
+        <tr>
+            <td>for</td>
+            <td>标记需执行的语句块，只要条件为真</td>
+        </tr>
+        <tr class="t2">
+            <td>function</td>
+            <td>申明函数</td>
+        </tr>
+        <tr>
+            <td>if...else</td>
+            <td>标记需执行的语句块，满足条件时</td>
+        </tr>
+        <tr class="t2">
+            <td>return</td>
+            <td>退出函数</td>
+        </tr>
+        <tr>
+            <td>switch</td>
+            <td>标记需执行的条件块，根据不同情况</td>
+        </tr>
+        <tr class="t2">
+            <td>try...catch</td>
+            <td>对语句块进行错误处理</td>
+        </tr>
+        <tr>
+            <td>var</td>
+            <td>申明变量</td>
+        </tr>
+    </table>
+</body>
+</html>

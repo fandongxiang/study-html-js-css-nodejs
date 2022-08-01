@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>arguments</title>
+</head>
+<body>
+  <script>
+    //argumens的使用
+    function fn() {
+      /*console.log(arguments); //里面存储了所有传递过来的实参
+      console.log(arguments.length);
+      console.log(arguments[2]);*/
+      //我们可以按照数组的遍历方式取出数据
+      for (var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+      }
+    };
+    fn(1,2,3,4,6);
+    // 它是一个伪数组，并不是真正意义上的数组
+    //1、具有数组的length属性；
+    //2、按照索引的方式进行存储；
+    //3、它没有真正数组的一些方法
+
+    //案例1：利用函数求任意个数的最大值
+    //（1）利用函数写方法；
+    //（2）任意个数代表个数不定，用arguments；
+    //（3）最大值：将arguments当作数组遍历；
+    function getMax() {
+      max = arguments[0];
+      for (var i = 1; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+          max = arguments[i];
+        }
+      };
+      return max;
+    };
+    console.log(getMax(4,54,21,61,0));
+  </script>
+</body>
+</html>

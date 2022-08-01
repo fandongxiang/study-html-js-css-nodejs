@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JQuery.js"></script>
+    <style>
+        input {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    书  名<input type="text" name="" id="bookname" autocomplete="on"> <br>
+    作  者<input type="text" name="" id="author" autocomplete="on"> <br>
+    出版社<input type="text" name="" id="publisher" autocomplete="on"> <br>
+    <button class="btn">post请求</button>
+    <script>
+        // $post(URL,[data},[callback])
+        $(function(){
+            $('.btn').on('click',function(){
+                const book_info = {bookname:$('#bookname').val(),author:$('#author').val(),publisher:$('#publisher').val()}
+                $.post('http://127.0.0.1:3007/api/addbook',book_info,function (res) {
+                    console.log(res);
+                })
+            })    
+        })
+    </script>
+</body>
+</html>

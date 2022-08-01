@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    //准备：交换两个变量的值
+    var a = 5;
+    var b = 10
+    var c = a;
+    var a = b;
+    var b = c;
+    console.log(a,b);
+
+    //冒泡排序
+    var arr = [55,55,84,65,20,54];
+    var temp;
+    for (var i = 0; i < ( arr.length - 1); i++) {   //外层循环管循环趟数；
+      for (var j = 0; j < arr.length - i; j++) {    //内层循环管交换的次数；
+        if (arr[j] > arr[j+1]) {                    //> <决定排序顺序；
+          temp = arr[j];
+          arr[j] = arr[j+1];
+          arr[j+1] = temp;
+        }
+      }
+    };
+    console.log(arr);
+  </script>
+</body>
+</html>

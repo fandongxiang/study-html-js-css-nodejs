@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time {
+            padding: 3px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        div {
+            width: 200px;
+            height: auto;
+            margin: 200px auto;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border-radius: 20px;
+            text-align: center;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>倒计时</p>
+        <span class="day time">1</span><span> 天</span>
+        <span class="hour time">2</span><span> 时</span>
+        <span class="minute time">3</span><span> 分</span>
+        <span class="second time">4</span><span> 秒</span>
+    </div>
+
+    <script>
+        var day = document.querySelector('.day')
+        var hour = document.querySelector('.hour')
+        var minute = document.querySelector('.minute')
+        var second = document.querySelector('.second')
+        var inputTime = '2022-6-4 19:30:28'
+        var inputTime = +new Date(inputTime)
+        // 先调用一次countdown函数，防止第一次刷新时显示不出来
+        countDown()
+        // 使用setInterval() 实现每秒调用
+        setInterval(countDown, 1000)
+        // 定义计算天时分秒的函数
+        function countDown() {
+            const nowTime = +new Date();
+            const times = (inputTime - nowTime) / 1000;
+            let d = parseInt(times / 60 / 60 / 24)
+            console.log(d);
+            d = getInt(d)
+            day.innerHTML = d
+            let h = parseInt(times / 60 / 60 % 24)
+            h = getInt(h)
+            hour.innerHTML = h
+            let m = parseInt(times / 60 % 60)
+            m = getInt(m)
+            minute.innerHTML = m
+            let s = parseInt(times % 60)
+            s = getInt(s)
+            second.innerHTML = s
+        }
+        countDown()
+        // 定义补零函数
+        function getInt(num) {
+            num = num < 10 ? '0' + num : num;
+            return num;
+        }
+    </script>
+</body>
+
+</html>

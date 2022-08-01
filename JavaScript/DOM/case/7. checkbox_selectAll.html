@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border-collapse: collapse;
+            border: black 1px solid;
+        }
+
+        table {
+            margin: 100px auto;
+        }
+
+    </style>
+  </head>
+  <body>
+    <table cellpadding="5">
+      <thead>
+        <tr>
+          <td><input type="checkbox" class="se_all"></td>
+          <td>puller</td>
+          <td>step</td>
+          <td>setMainHeat</td>
+          <td>time</td>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <script>
+      /* create table*/
+      var tbody = document.querySelector('tbody');
+      for (var i = 0; i < 5; i++) {
+        var tr = document.createElement('tr');
+        tbody.appendChild(tr);
+        for (var j = 0; j < 5; j++) {
+          var td = document.createElement('td');
+          tr.appendChild(td);
+          /* add input_checkbox in the first td*/
+          if (j == 0) {
+            var input = document.createElement('input');
+            input.type = 'checkbox';
+            tr.children[0].appendChild(input);
+          }
+        }
+      }
+      ;
+
+      /* add select all checkbox event */
+      var se_all = document.querySelector('input');
+      var check = tbody.querySelectorAll('input');
+      se_all.onclick = function () {
+        for (var i = 0; i < check.length; i++) {
+          check[i].checked = this.checked;
+        }
+      };
+      /* add checkbox select all event */
+      for (var i = 0; i < check.length; i++) {           //tranvers every onclick event
+        check[i].onclick = function () {
+          var flag = true;
+          for (var i = 0; i < check.length; i++) {        // tranvers every checkbox's checked
+            if (!check[i].checked) {
+              flag = false;
+            }
+          }
+          se_all.checked = flag;
+        }
+      }
+
+
+    </script>
+  </body>
+</html>

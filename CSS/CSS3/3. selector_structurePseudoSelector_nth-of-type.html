@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* type类型先看类型，再看第几个*/
+      /* 1. 选择指定类型的第一个*/
+      ul li:first-of-type {
+        color: darkorange; /*这中是选择指定类型第一个小li*/
+      }
+
+      /* 2. 选择指定类型的最后一个*/
+      ul li:last-of-type {
+        color: blue; /*最后一项优先级高*/
+      }
+
+      /* 3. 选择指定类型的第n个*/
+      ul li:nth-of-type(3) {
+        color: chartreuse; /* n从1开始*/
+      }
+
+      /* 4. 选择指定类型的前后几个*/
+      ul li:nth-of-type(n+6) {
+        color: #807500;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <a href="#">我是小a</a>
+      <li>我是第1个小li</li>
+      <li>我是第2个小li</li>
+      <li>我是第3个小li</li>
+      <li>我是第4个小li</li>
+      <li>我是第5个小li</li>
+      <li>我是第6个小li</li>
+      <li>我是第7个小li</li>
+      <li>我是第8个小li</li>
+      <a href="#">我是小a</a>
+    </ul>
+  </body>
+</html>

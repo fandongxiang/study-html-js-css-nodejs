@@ -1,0 +1,16 @@
+#p1{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    top: 50px;
+    z-index: 2;
+}
+#p2{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    left: 30px;
+    z-index: 1;
+}

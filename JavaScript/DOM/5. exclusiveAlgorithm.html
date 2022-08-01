@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>排它思想</title>
+  </head>
+  <body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+      var btn = document.querySelectorAll('button');
+      for (var i = 0 ; i < btn.length; i++) {
+        btn[i].onclick = function () {
+          // First: kill others
+          for (var i = 0; i < btn.length; i++) {
+            btn[i].style.backgroundColor = ''
+          }
+          // Second: leave me alone
+          this.style.backgroundColor = 'pink';
+        }
+      };
+      // First: kill others
+      // Second: leave me alone
+    </script>
+  </body>
+</html>

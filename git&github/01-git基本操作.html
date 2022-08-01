@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <pre>
+    一、基础cmd控制台操作
+    1. pwd：显示当前控制台所在目录；
+    2. ls：显示当前目录所有文件；
+    3. cd：切换目录；
+    二、git基础操作
+    1. git version:显示当前git版本号，确认安装了git；
+    2. git config --global user.name "fandongxiang":配置用户名；
+    3. git config --global user.email "730596730@qq.com"
+    4. git init:初始化git目录，在当前目录创建隐藏的.git文件夹；
+    5. git status:查看当前状态；
+    6. git add .:将文件从工作区添加到缓存区；
+    7. git commit -m "第一次提交":提交文件到版本库；
+    三、vscode自带的git操作
+       安装git history diff 插件，可以对比文件前后差异；
+    四、回退到某个版本
+    1. git log: 查看提交日志；
+       git reflog:查看历史提交；
+    2. 复制提交日志中的commit ID；
+    3. git reset --hard commit ID:回退到某个版本，并且后续版本也没有了
+       --hard:硬重置；--soft：软重置；
+    五、创建分支
+    1. git branch branchName:创建分支并命名；
+    2. git checkout branchName:切换分支；
+    3. git branch -a:产看所有分支，带*的是当前所有分支；
+    4. git checkout -b branchName:创建分支，并切换到当前分支；
+    5. git branch -d branchName:删除分支；git
+    六、合并本地分支
+    1. git merge branchName: 合并分支到主分支；
+    2. git push: 推送到github仓库；
+
+
+
+  </pre>
+</body>
+</html>

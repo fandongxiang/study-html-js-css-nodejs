@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  //要点分析：
+  //1、分为3部分：人数输入、个人成绩输入及平均成绩输出；
+  //2、个人成绩输入循环：循环条件为循环次数小于人数；循环体用循环次数作为第n学生提示，
+    //并且总分数作为循环体每次增加；
+  <script>
+    //1、输入学生人数
+    var number = prompt('请输入班级学生人数：');
+    //2、循环输入学生成绩，累计计算成绩总和
+    var sum = 0;
+    for (var i = 1; i <= parseInt(number); i++) {
+      var score = prompt('请输入第' + i + '个学生的成绩：');
+      sum += parseFloat(score);
+    }
+    //3、输出学生平均分数
+    var averageScore = sum / parseInt(number);
+    alert(averageScore);
+  </script>
+</body>
+</html>

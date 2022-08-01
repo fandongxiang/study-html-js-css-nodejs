@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环输出</title>
+    <script src="./JQuery.js"></script>
+    <script src="./template-web.js"></script>
+</head>
+<body>
+    <script type="text/html" id="hobby">
+        <!-- {{each 循环的数组}} 索引号：{{$index}}，值是{{$value}} -->
+        {{each hobby}}
+        <li>索引号是：{{$index}}，值是：{{$value}}</li>
+        {{/each}}
+    </script>
+
+    <script>
+        const data = {hobby: ['弹琴','阅读','打游戏','跑步']}
+        const dataStr = template('hobby',data)
+        $('body').append(dataStr)
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输出</title>
+</head>
+<body>
+    <h3>javascript显示方案</h3>
+    不同方案显示数据
+    <ul>
+        <li>使用innerHTML写入HTML元素</li>
+        <li>使用document.write()写入HTML输出</li>
+        <li>使用windows.alert()写入警告框</li>
+        <li>使用console.log()写入警告框</li>
+    </ul>
+    <h3>使用innerHTML</h3>
+    <p>使用document.getelement.byid(ID)方式访问HTML元素</p>
+    <p id="id"></p>
+    <script>
+        document.getElementById("id").innerHTML = 2+5;
+    </script>
+    <h3>使用document.write</h3>
+    <p>使用document.write计算8+9</p>
+    <p id="b"></p>
+    <script>
+        document.write(8+9);
+    </script>
+    <p>document.write只能用于测试，在页面完全加载后使用document.write会清除所有的HTML</p>
+    <button type="button" onclick="document.write(8+9)">试一试</button>
+    <h3>使用windows.alert警告框提示</h3>
+    <p>弹出警告框显示5+6的值</p>
+    <script>
+        window.alert(5+6);
+    </script>
+    <h3>使用console.log显示</h3>
+    <p>请按F12启动浏览器控制台，选择console显示5+6的结果</p>
+    <script>
+        console.log(5+6)
+    </script>
+</body>
+</html>

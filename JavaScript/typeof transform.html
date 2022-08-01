@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+    <script>
+        var age = 18;
+        console.log(age);
+        var a = age.toString();
+        console.log(typeof a);
+
+        var b = toString(age);
+        console.log(typeof b);
+
+        var c = age + '';
+        console.log(typeof c);
+
+    /*    var age = prompt('请输入你的年龄')*/
+        console.log(typeof age);
+        console.log(typeof parseInt(age));
+        console.log(parseInt('120px'));
+        console.log(parseFloat('3.14'));
+        console.log(Number("4.55"));
+        //隐式转换
+        console.log('12'- 0);
+        console.log('15'/1);
+        console.log('15'*'2');
+
+   /*     var year = prompt('请输入你的出生年份');
+        var d = 2022- year;
+        alert('你的年龄是'+ d +'岁');
+*/
+        var num1 = prompt('请输入第一个值');
+        var num2 = prompt('请输入第二个值');
+        var result = parseFloat(num1) + parseFloat(num2);
+        alert('和为' + result);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

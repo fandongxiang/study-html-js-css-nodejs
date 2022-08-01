@@ -1,0 +1,14 @@
+body{
+    background-image: url("../images/sea.jpeg");        /*背景图片*/
+    background-repeat: no-repeat;                       /*图片是否重复排列*/
+    background-position: center top;                    /*图片位置*/
+    background-attachment: fixed;                       /*图片是否随页面滚动*/
+    background-size: 75% 100%;                          /*图片尺寸*/
+    background-origin:content-box;
+}
+h1{
+    background-color: aqua;
+    width: 40%;
+    padding: 10px;
+
+}

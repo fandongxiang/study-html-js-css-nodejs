@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        margin: 50px auto;
+        background-color: darkorange;
+      }
+      /* ::befor在父元素内容之前创建一个行内元素*/
+      div::before {              /*权重是2*/
+        content: '我';           /* content必须写*/
+        width: 100px;            /*行内元素宽高不起作用*/
+      }
+      /* ::after在父元素内容之后创建一个行内元素*/
+      div::after {
+        content: '谁';
+      }
+    </style>
+  </head>
+  <body>
+    <!--伪元素选择器可以帮助我们用CSS创建新标签元素，而不是用HTML创建，简化HTML结构-->
+    <img alt="" src="image/pseudoElement.png" width="700px"> </br>
+    <div>
+      是
+    </div>
+  </body>
+</html>

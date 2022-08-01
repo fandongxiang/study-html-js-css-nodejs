@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>calculator</title>
+</head>
+  <script>
+    //thinking step
+    // 1. choose use 'switch';
+    // 2. 'do while' loop nested 'switch';
+    // 3. loop divided into 'switch' and index;
+
+    var number = prompt('welcome to use Easy Calculator\n1.addition operation\n' +
+        '2.substruction operation\n3.multiplication\n4.division operation\n5.Exit');
+    while (number != 5) {
+      switch (parseInt(number)) {
+        case 1:
+          var num1 = prompt('Please input the first number');
+          var num2 = prompt('Please input the second number');
+          var sum = parseInt(num1) + parseInt(num2);
+          alert(num1 + '+' + num2 + '=\n' + sum)
+          break;
+        case 2:
+          var num1 = prompt('Please input the first number');
+          var num2 = prompt('Please input the second number');
+          var sub = num1 - num2;
+          alert(num1 + '-' + num2 + '=\n' + sub)
+          break;
+        case 3:
+          var num1 = prompt('Please input the first number');
+          var num2 = prompt('Please input the second number');
+          var mul = num1 * num2;
+          alert(num1 + '*' + num2 + '=\n' + mul)
+          break;
+        case 4:
+          var num1 = prompt('Please input the first number');
+          var num2 = prompt('Please input the second number');
+          var div = num1 / num2;
+          alert(num1 + '/' + num2 + '=\n' + div)
+          break;
+      };
+      var number = prompt('welcome to use Easy Calculator\n1.addition operation\n' +
+          '2.substruction operation\n3.multiplication\n4.division operation\n5.Exit');
+    }
+  </script>
+<body>
+
+</body>
+</html>

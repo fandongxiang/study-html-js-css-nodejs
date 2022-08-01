@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <link rel="stylesheet" type="text/css" href="7、定位_浮动.css">
+</head>
+<body>
+  <h1>CSS浮动</h1>
+  <h3>作用</h3>
+  <b>1、实现文字环绕；</b> </br>
+  <b>2、实现横向布局</b>
+  <h3>缺点</h3>
+  <b>1、布局时缺乏弹性，元素内容会溢出；</b> </br>
+  <b>2、需要使用clear消除浮动；</b>
+  <ol>
+    <li>
+      float属性
+      <ol type="a">
+        <li>left:向左浮动</li>
+        <li>right:向右浮动</li>
+        <li>none:元素不浮动</li>
+        <li>inherit:从父级继承浮动属性</li>
+      </ol>
+    <li>
+      float浮动的特点
+        <ol type="a">
+          <li>不浮动元素会占据浮动元素空间(脱离了文档流)，但元素内文字会环绕浮动元素分布</li>
+          <li>浮动找浮动</li>
+          <li>多个浮动元素，以顶部基准对齐</li>
+          <Li>浮动后的元素会变成行内块元素，可以定义宽高等属性</Li>
+        </ol>
+    </li>
+    <li>
+      clear属性：去掉浮动属性，包括从父级继承来的属性
+      <ol>
+        <li>left、right：去掉向左向右浮动属性</li>
+        <li>both:去掉所有浮动属性</li>
+        <li>inherit:去掉父级继承来的属性</li>
+      </ol>
+    </li>
+  </ol>
+  <h2>示例</h2>
+  <div class="nofloat d">不浮动元素1</div>
+  <div class="float a">浮动元素1</div>
+  <div class="float b">浮动元素2</div>
+  <span class="float c">span变行内块浮动元素</span>
+  <div class="nofloat e">不浮动元素2</div>
+  <div class="clfloat">消除浮动元素</div>
+</body>
+</html>

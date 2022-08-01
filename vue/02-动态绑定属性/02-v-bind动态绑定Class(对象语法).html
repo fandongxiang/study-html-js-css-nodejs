@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind对象语法</title>
+    <style>
+        .active {
+            color: red;
+        }
+        .line {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <h3 :class="{类名1：boolean,类名2：Boolean}">{{message}}</h3> -->
+        <h3 :class="{active:false,line:true}">{{message1}}</h3>
+        <h3 :class="{active:isActive,line:isLine}">{{message2}}</h3>
+        <button @click="btnclick">按钮</button>
+        <h3 id="changeColor" class="active line">原生js方法</h3>
+        <button id="btn">按钮</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message1: '对象语法的本质',
+                message2: '对象语法的变相',
+                isActive: true,                         // 给初始默认值
+                isLine: true,
+            },
+            methods: {
+                btnclick: function() {
+                    this.isActive = !this.isActive
+                }
+            },
+        })
+    </script>
+
+    <script>
+        const h3 = document.querySelector('#changeColor');
+        const btn = document.querySelector('#btn');
+        // // 方法一： html5 中 classList.contain() 方法
+        // btn.addEventListener('click',function() {
+        //     if (h3.classList.contains('active')) {
+        //         h3.classList.remove('active')
+        //     }else {
+        //         h3.classList.add('active')
+        //     }
+        // })
+        // 方法二： getAttribute('class') 获得元素所有 class数组， 再通过数组 indexOf 方法查找是否存在
+        // console.log(h3.getAttribute('class').indexOf('active'));
+        // btn.addEventListener('click',function() {
+        //     if (h3.getAttribute('class').indexOf('active') > -1) {
+        //         h3.classList.remove('active')
+        //     } else {
+        //         h3.className += 'active'
+        //     }
+        // })
+        // 方法三：利用 className 查找所有的 class属性，再利用 indexOf 判断
+        console.log(typeof h3.className);
+    </script>
+</body>
+</html>

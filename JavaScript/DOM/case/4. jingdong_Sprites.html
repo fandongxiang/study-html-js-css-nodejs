@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>京东精灵图</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        display: block;
+        width: 66px;
+        height: 57px;
+        /*文字*/
+        text-decoration: none;
+        text-align: center;
+        line-height: 95px;
+        color: black;
+        font-size: 12px;
+        /*背景图片*/
+        background: url("../image/京东精灵图.jpg");
+        /*      border: black 1px solid;*/
+      }
+
+      li {
+        list-style: none;
+      }
+
+      body {
+        background-color: #f4f4f4;
+      }
+
+      .box {
+        margin: 100px auto;
+        width: 190px;
+        height: 239px;
+        background-color: #fff;
+      }
+      .over {
+        background: url("../image/花费-hover.png");
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="box">
+      <ul class="col1">
+        <li>
+          <a href="#">
+            <span>话费</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>游戏</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>众筹</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>电影票</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var a = document.querySelectorAll('a');
+      for (var i = 0; i < a.length; i++) {
+        var index = i * 57;
+        a[i].style.backgroundPosition = '1px -' + index + 'px';
+      }
+      ;
+
+      for (var i = 0; i < a.length; i++) {
+        a[i].onmouseover = function () {
+          this.style.background = 'url("../image/花费-hover.png")';
+          console.log('hello');
+        }
+      }
+      ;
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="header">
+    <ul>
+      <li></li>
+      <li id="li2"></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+<script>
+  var header = document.getElementById('header');
+  console.log(header);
+  var ul = document.getElementsByTagName('ul');
+  console.log(ul);
+  var li1 = ul[0].getElementsByTagName('li');
+  console.log(li1);
+
+  var header1 = document.querySelector('#header');
+  console.log(header1);
+  var ul1 = document.querySelector('ul');
+  console.log(ul1);
+  var li11 = document.querySelector('li');
+  console.log(li11);
+  var liall = document.querySelectorAll('li');
+  console.log(liall);
+
+  var ul2 = document.querySelectorAll('ul')[0];
+  var ulli2 = ul2.querySelectorAll('li')[1];
+  console.log(ulli2);
+</script>
+</body>
+</html>

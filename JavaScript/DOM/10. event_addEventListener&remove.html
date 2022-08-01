@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>事件监听</title>
+  </head>
+  <body>
+    <button>click</button>
+    <button class="btn">me</button>
+    <button class="remove">remove</button>
+  </body>
+  <script>
+    /*addEventListener*/
+
+    // 1. syntax: target.addEventListener(type,listener,useCpature)
+    var btn = document.querySelector('button');
+    btn.addEventListener('click', function () {               /* note: type is string without 'on' */
+      alert('hello javaScript')
+    });
+
+    // 2. difference with target.type = function: can add multiple events to target
+    var btn1 = document.querySelector('.btn');
+    btn1.addEventListener('click', function () {
+      alert('hello fan')
+    });
+    btn1.addEventListener('click',function () {
+      alert('hello dong')
+    });
+  </script>
+
+  <script>
+    /*removeEventListener*/
+
+    // 1. syntax : target.addEventListener(type,listener,useCapture)
+    var btn2 = document.querySelector('.remove');
+    btn2.addEventListener('click',fn);
+    function fn () {
+      alert('hello xiang')
+    };
+    btn2.addEventListener('click',fn2);
+    function fn2() {
+      alert('hello zai')
+    };
+    btn2.removeEventListener('click',fn2);
+
+  </script>
+</html>

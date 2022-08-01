@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>创建和添加节点</title>
+    <style>
+      img {
+          width: 100px;
+          height: 100px;
+          background-color: deeppink;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+
+    </div>
+    // 1. get parentNode;
+    // 2. create childNode : document.createElement('element')
+    // 3. add childNode : parentNode.appendChild(childNode);
+    <script>
+      // 1. get parentNode;
+      var div = document.querySelector('div');
+      // 2. create childNode : document.createElement('element')
+      var img = document.createElement('img');
+      // 3. append childNode : parentNode.appendChild(childNode);
+      div.appendChild(img);
+      // 4. insert childNode: parentNode.insertBeforeChild(child,指定元素)
+      var input = document.createElement('input');
+      div.insertBefore(input,img);
+
+    </script>
+  </body>
+</html>

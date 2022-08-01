@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./case/JQuery.js"></script>
+</head>
+    <button id="btnGet">GEt相对根目录路径</button>
+    <button class="bget">Get相对本页面路径</button>
+    <button id="btnPost">POST</button>
+    <script>
+           $('#btnGet').innerHTML = 'hhhh';
+        $(
+            function() {
+                // 1、测试GET相对根目录接口
+                $('#btnGet').on('click',function(){
+                    $.ajax({
+                        type:'GET',
+                        url: '/api/get',                         // '/'是相对根目录标志
+                        data: {name:'zs',age:20},
+                        success:function(res) {
+                            console.log(res);
+                        }
+                    })
+                })
+
+                 // 2、测试GET相对本页面路径接口
+                 $('.bget').on('click',function(){
+                    $.ajax({
+                        type:'GET',
+                        url: 'api/get',                         // 没有'/'直接开头是自动拼接当前页面网址
+                        data: '路径类型:相对本页面的相对路径',
+                        success:function(res) {
+                            console.log(res);
+                        }
+                    })
+                })
+
+                // 2、测试POST接口
+                $('#btnPost').on('click',function(){
+                    $.ajax({
+                        type:'POST',
+                        url: 'http://localhost:8080/api/post',
+                        data: {bookname:'水浒传',author:'施耐庵'},
+                        success:function(res) {
+                            console.log(res);
+                        }
+                    })
+                })
+            }
+        )
+    </script>
+<body>
+    
+</body>
+</html>

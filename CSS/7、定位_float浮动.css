@@ -1,0 +1,31 @@
+.nofloat{
+    height: 50px;
+    width: 300px;
+}
+.d{
+    background-color: blue;
+}
+.e{
+    background-color: aqua;
+ }
+.float{
+    width: 50px;
+    float: left;
+    background-color: red;
+}
+.a{
+    height: 50px;
+}
+.b{
+    height: 70px;
+}
+.c{
+    height: 90px;
+    width: 140px;
+}
+.clfloat{
+    clear: left;
+    height: 50px;
+    width: 300px;
+    background-color: darkgoldenrod;
+}

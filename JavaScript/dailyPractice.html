@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    // 1. function to reversal arry
+    // 2. function to sort arry
+    // 3. for loop to print multiplication-table
+    // 4. tranverse object.array to print table
+    // 5. random choose array element from array
+    // 6. Find the character with the most occurrences in the string
+
+    // 1. reversal arry
+    function revArr(arr) {
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        newArr[arr.length - i - 1] = arr[i];
+      }
+      return newArr
+    };
+    var arr = revArr([1,5,6,4,8]);
+    console.log(arr);
+
+    // 2. sort arr
+    function sortArr(arr) {
+      var temp;
+      for (var i = 0; i < arr.length - 1; i++) {
+        for (var j = 0; j < arr.length - i - 1; j++) {
+          if (arr[j] > arr[j+1]) {
+            temp = arr[j];                      //attention! inner for loop variable is 'j' not 'i'
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+        }
+      };
+      return arr;
+    };
+    var arr1 = sortArr([2,5,65,45,2,3]);
+    console.log(arr1);
+
+    // 3. multiplication
+      for (i = 1; i < 10 ; i++) {
+        var str = '';
+        for (j = 1; j < i +1; j++ ) {
+          var mul = i * j;
+          str += j + '*' + i + '=' + mul + ' ';
+        };
+        console.log(str);
+      };
+
+    // 4. traverse object.arry to create table
+    var table = new Object();
+    table.th = ['puller','zone','stenName','isSucessful'];
+    table.tr1 = ['A01','A1','dengjing','1'];
+    for (k in table) {
+      var str = '';
+      for (var i = 0;i < table[k].length ;i++) {
+        str += table[k][i] + ' ';
+      };
+      console.log(str)
+    };
+  </script>
+</head>
+<body>
+
+</body>
+</html>

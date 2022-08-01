@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+</head>
+<body>
+    <h3>JavaScript标识符命名规则</h3>
+    构造变量名称的通用规则
+    <ul>
+        <li>名称可以包含字母、数字、下划线、美元符号</li>
+        <li>名称可以以字母、_、$开头</li>
+        <li>名称对大小写敏感</li>
+        <li>保留字无法用作标量</li>
+    </ul>
+    <h3>赋值运算符</h3>
+    JavaScript中=不是等号，而是赋值运算符</br>
+    等于运算符是==
+    <h3>var申明（创建）变量</h3>
+    <p id="demo"></p>
+    <script>
+        var x = 5;
+        document.getElementById("demo").innerHTML= x;
+    </script>
+    <h3>一个语句，多个变量</h3>
+    <p id="demo1"></p>
+    <script>
+        var FirstName = "fan",
+            LastName = "dongxiang",
+            like = "wenhuihui";
+        document.getElementById("demo1").innerHTML = FirstName + LastName + like;
+    </script>
+    <h3>Value=undefined 变量不赋值</h3>
+    <p id="demo2"></p>
+    <script>
+        var fan;
+        document.getElementById("demo2").innerHTML = fan;
+    </script>
+
+</body>
+</html>

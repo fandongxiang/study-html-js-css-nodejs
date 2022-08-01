@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>case</title>
+</head>
+<body>
+  <script>
+    //案例1：利用函数封装方法反转任意一个数组；
+    //（1）函数封装：用函数定义方法；
+    //（2）任意一个数组：数组个数不定用arguments；
+    //（3）反转数组：将arguments按数组反转方法反转；
+    function getReverse() {
+      var newArr = [];
+      for (var i = 0; i < arguments.length; i++) {
+        newArr[arguments.length - i -1] = arguments[i];
+      };
+      return newArr;
+    }
+    console.log(getReverse(1,5,4,6,2,0));
+
+    //案例2：利用函数封装方法，对数组排序--冒泡排序
+    //(1)函数封装：function定义；
+    //（2）数组数不定：用arguments；
+    //（3）数组排序：冒泡排序--双重for循环；
+    function sort() {
+      var temp;
+      for (var i = 0; i < arguments.length; i++) {            //外层循环控制循环的趟数
+        for (var j = 0; j < arguments.length - i - 1; j++) {  //内层循环控制跳转的次数
+          if (arguments[j] > arguments[j+1]) {
+            temp = arguments[j];
+            arguments[j] = arguments[j+1];
+            arguments[j+1] = temp;
+          }
+        }
+      }
+      return arguments;
+    };
+    var result = sort(2,5,3,40,6,45,21);
+    console.log(result);
+
+    //案例3：判断是否是闰年
+    //判断条件：能被4整除且不能被100整除，或能被400整除；
+    function getLeap(a) {
+      var flag = false;                 //定义一个初始值
+      if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0) {
+         flag = true;                   //利用if为真时输出相反值
+      };
+      return flag;                      //if为假时纯输出原来值
+    };
+  </script>
+</body>
+</html>

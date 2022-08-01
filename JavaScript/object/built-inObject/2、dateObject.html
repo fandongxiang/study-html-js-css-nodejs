@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    // Format date
+    var date = new Date();
+    console.log(date);
+    var year = console.log(date.getFullYear());
+    var month = console.log(date.getMonth() + 1);  //note: a zero-based value,where zero indicates the first month
+    var dates = console.log(date.getDate());
+    var hour = console.log(date.getHours());
+    var minutes = console.log(date.getMinutes());
+    var seconds = console.log(date.getSeconds());
+    var  day =console.log(date.getDay());        //note: zero represents Sunday;
+
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;  //note: a zero-based value,where zero indicates the first month
+    var dates = date.getDate();
+    var houn = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var arrDay = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    var  day = arrDay[date.getDay()];      //note: zero represents Sunday;
+    console.log('今天是:' + year + '年' + month + '月' + dates + '日' + ' ' + day);
+
+    function getDate() {
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;  //note: a zero-based value,where zero indicates the first month
+      var dates = date.getDate();
+      var hour = date.getHours();
+      var minutes = date.getMinutes();
+      var seconds = date.getSeconds();
+      var arrDay = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+      var  day = arrDay[date.getDay()];      //note: zero represents Sunday;
+      return year + '年' + month + '月' + dates + '日' + ' ' + day + ' ' +
+          hour + '点' + minutes + '分' + seconds + '秒';
+    };
+    console.log(getDate());
+  </script>
+
+  <script>
+    // Timestamp: Get milliseconds from 1970 to the present
+    //Method 1:
+    var date = new Date();
+    console.log(date.valueOf());
+    console.log(date.getTime());
+    //Method 2：
+    var time = +new Date();
+    console.log(time);
+    //Method 3:
+    console.log(Date.now());        //HTML5 appends;
+  </script>
+
+  <script>
+    //Countdown
+    function countDown(time) {
+      var nowMilliSec = +new Date();
+      var inputMilliSce = +new Date(time);
+      var second = (inputMilliSce - nowMilliSec) / 1000;
+      var d = parseInt(second / 60 / 60 / 24);
+      d = d < 10 ? '0' + d : d;
+      var h = parseInt(second / 60 / 60 % 24);
+      h = h < 10 ? '0' + h : h;
+      var m = parseInt(second / 60 % 60);
+      m = m < 10 ? '0' + m : m;
+      var s = parseInt(second % 60);
+      s = s < 10 ? '0' + s : s;
+      return d + '天' + h + '时' + m + '分' + s + '秒';
+    };
+    console.log(countDown('2022-4-5'));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

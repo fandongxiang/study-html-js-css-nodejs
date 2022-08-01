@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex弹性布局</title>
+</head>
+<body>
+    <h1>flex弹性布局</h1>
+    <ol>
+        <li><b>flex实际用途</b></li>
+            <ol type="1">
+                <li>用于网站的弹性布局</li>
+                <li>常用网页的各种导航栏的布局</li>
+            </ol>
+        <li><b>flex优点</b></li>
+            <ol type="a">
+                <li>可根据内部内容弹性伸缩</li>
+            </ol>
+        <li><b>flex缺点</b></li>
+        <li><b>flex用法</b></li>
+            <ol type="a">
+                <li>设置一个父元素（容器）</li>
+                <li>在父元素容器中定义子元素（项目）</li>
+            </ol>
+        <li><b>父元素（容器）属性</b></li>
+            <ol type="1">
+                <li>display:flex 定义父元素为可伸缩flex容器</li>
+                <li>flex-direction 定义堆叠方向</li>
+                    <ul>
+                        <li>column 定义堆叠方向从上到下</li>
+                        <li>column-reverse 定义堆叠方向从下到上</li>
+                        <li>row 定义堆叠方向从左到右</li>
+                        <li>row-reverse 定义堆叠方向从右到左</li>
+                    </ul>
+                <li>flex-wrap 定义是否应该对flex项目换行</li>
+                <li>flex-flow 同时设置flex-direction和flex-wrap简写属性，例如row wrap</li>
+                <li>justify-content 定义flex项目的水平对齐方式</li>
+                    <ul>
+                        <li>center 子项目在父容器中心对齐</li>
+                        <li>flex-start 子项目在父容器开头对齐</li>
+                        <li>flex-end 子项目在父容器末端对齐</li>
+                        <li>space-around 子项目之前、之后、之间自动用空格填充</li>
+                        <li>space-between 子项目之间用空格填充</li>
+                    </ul>
+                <li>align-items 定义flex单排子项目的垂直对齐方式</li>
+                    <ul>
+                        <li>stretch 拉伸flex项目以填充容器（默认）</li>
+                        <li>center 子项目在父容器中心对齐（用于子项目高度一定时）</li>
+                        <li>flex-start 子项目在父容器顶部对齐（用于子项目高度一定时）</li>
+                        <li>flex-end 子项目在父容器底端对齐（用于子项目高度一定时）</li>
+                        <li>baseline 子项目沿父容器基准线对弈（用于子项目高度不同时）</li>
+                    </ul>
+                <li>align-content 定义多排子项目弹性线的垂直对齐方式（与wrap共用）</li>
+                    <ul>
+                        <li>stretch 拉伸弹性线以占满空间（默认）</li>
+                        <li>space-between 定义弹性线之间有相等的间距</li>
+                        <li>space-around 定义弹性线之前、之间、之后有相等的间距</li>
+                        <li>center 子项目在容器中间显示</li>
+                        <li>flex-start 子项目在容器开头对齐</li>
+                        <li>flex-end 子项目在容器末端对齐</li>
+                    </ul>
+            </ol>
+        <li>子元素项目属性</li>
+            <ol>
+                <li>order 定义子项目的显示顺序，默认为0 html中<div style="order: 2"</li>
+                <li>flex-grow 定义子项目相比于其它子项目的拉伸宽度，默认为0 <div style="flex-grow: 4"</li>
+                <li>flex-shirink 定义子项目相比于其它子项目的缩减宽度，默认为1</li>
+                <li>flex-basis 定义子项目的初始长度</li>
+                <li>flex 定义flex-grow、flex-shirink、flex-basis的简写 <div style="flex: 0 1 100px" </li>
+                <li>align-self 定义子项目的单独对齐方式（center、flex-start、flex-end），将覆盖父容器的对齐方式设置</li>
+
+
+            </ol>
+    </ol>
+</body>
+</html>

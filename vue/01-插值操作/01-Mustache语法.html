@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mustache语法</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>申明式渲染</h1>
+        <!-- 1. 简单插入 -->
+        <h4> {{message}}</h4>
+        <!-- 2. mustache 内部运算 -->
+        <h4>{{message + ' ' + message}}</h4>
+        <h4>{{counter + 1}}</h4>
+        <h4>第一个：{{message}}</h4>
+        <h4>{{message}} {{counter}}</h4>
+    </div>
+
+    <!-- 1. 引入 vuejs -->
+    <script src="../vue.js"></script>
+    <script>
+        // 2. 实例化vue对象
+        const app = new Vue({
+            // 3. 定义要挂载的元素
+            el: '#app',
+            // 3. data 属性中定义值
+            data: {
+                message: 'hello Vue',
+                counter: 3
+            }
+        })
+    </script>
+</body>
+
+</html>

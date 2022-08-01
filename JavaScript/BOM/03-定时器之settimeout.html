@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 原始写法：默认毫秒
+        setTimeout(() => {
+            console.log('时间到了！');
+        }, 5000);
+        // 2. 通过调用函数
+        setTimeout(callback,7000)
+        function callback() {
+            console.log('爆炸了！');
+        }
+        // 3. 给定时器加标识符
+        var time1 = setTimeout(() => {
+            console.log('我来了！');
+        }, 3000);
+    </script>
+</body>
+</html>

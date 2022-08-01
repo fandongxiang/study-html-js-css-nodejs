@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript下拉菜单</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        * {
+            padding:0;
+            margin:0;
+        }
+        body {
+            /*font-family:Arial, sans-serif*/;
+            font-size:14px; background-color:#000;
+        }
+        #navigation, #navigation li ul {
+            list-style-type:none;
+        }
+        #navigation {
+        }
+        #navigation li {
+            float:left;
+            text-align:center;
+            position:relative;
+        }
+        #navigation li a:link, #navigation li a:visited {
+            display:block;
+            text-decoration:none;
+            color:#fff;
+            width:82px;
+            height:40px;
+            line-height:40px;
+            border:1px solid #fff;
+            border-width:1px 1px 0 0;
+            background:#255f9e;
+            padding-left:10px;
+        }
+        #navigation li a:hover {
+            color:#fff;
+            background:#ffb100;
+        }
+        #navigation li ul li a:hover {
+            color:#fff;
+            background:#ffb100
+        }
+        #navigation li ul {
+            display:none;
+            position:absolute;
+            top:40px;
+            margin-top:1px;
+            font-size:12px;
+        }
+    </style>
+    <script type="text/javascript">
+        function displaySubMenu(li) {
+            var subMenu = li.getElementsByTagName("ul")[0];
+            subMenu.style.display = "block";
+        }
+        function hideSubMenu(li) {
+            var subMenu = li.getElementsByTagName("ul")[0];
+            subMenu.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+<ul id="navigation">
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+        <a href="#">菜单1</a>
+        <ul>
+            <li><a href="#">你好</a></li>
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单1</a></li>
+        </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+        <a href="#">菜单2</a>
+        <ul>
+            <li><a href="#">栏目2</a></li>
+            <li><a href="#">栏目2</a></li>
+            <li><a href="#">栏目2</a></li>
+            <li><a href="#">栏目2</a></li>
+            <li><a href="#">栏目2</a></li>
+        </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+        <a href="#">菜单3</a>
+        <ul>
+            <li><a href="#">菜单3</a></li>
+            <li><a href="#">菜单3</a></li>
+            <li><a href="#">菜单3</a></li>
+            <li><a href="#">菜单3</a></li>
+            <li><a href="#">菜单3</a></li>
+        </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+        <a href="#">菜单4</a>
+        <ul>
+            <li><a href="#">菜单4</a></li>
+            <li><a href="#">菜单4</a></li>
+            <li><a href="#">菜单4</a></li>
+            <li><a href="#">菜单4</a></li>
+            <li><a href="#">菜单4</a></li>
+        </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+        <a href="#">栏目5</a>
+        <ul>
+            <li><a href="#">菜单5</a></li>
+            <li><a href="#">菜单5</a></li>
+            <li><a href="#">菜单5</a></li>
+            <li><a href="#">菜单5</a></li>
+            <li><a href="#">菜单5</a></li>
+        </ul>
+    </li><li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+    <a href="#">栏目6</a>
+    <ul>
+        <li><a href="#">菜单6</a></li>
+        <li><a href="#">菜单6</a></li>
+        <li><a href="#">菜单6</a></li>
+        <li><a href="#">菜单6</a></li>
+        <li><a href="#">菜单6</a></li>
+    </ul>
+</li><li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+    <a href="#">栏目7</a>
+    <ul>
+        <li><a href="#">菜单7</a></li>
+        <li><a href="#">菜单7</a></li>
+        <li><a href="#">菜单7</a></li>
+        <li><a href="#">菜单7</a></li>
+        <li><a href="#">菜单7</a></li>
+    </ul>
+</li><li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+    <a href="#">栏目8</a>
+    <ul>
+        <li><a href="#">菜单8</a></li>
+        <li><a href="#">菜单8</a></li>
+        <li><a href="#">菜单8</a></li>
+        <li><a href="#">菜单8</a></li>
+        <li><a href="#">菜单8</a></li>
+    </ul>
+</li><li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+    <a href="#">栏目09</a>
+    <ul>
+        <li><a href="#">菜单9</a></li>
+        <li><a href="#">菜单9</a></li>
+        <li><a href="#">菜单9</a></li>
+        <li><a href="#">菜单9</a></li>
+        <li><a href="#">菜单9</a></li>
+    </ul>
+</li><li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+    <a href="#">栏目10</a>
+    <ul>
+        <li><a href="#">菜单10</a></li>
+        <li><a href="#">菜单10</a></li>
+        <li><a href="#">菜单10</a></li>
+        <li><a href="#">菜单10</a></li>
+        <li><a href="#">菜单10</a></li>
+    </ul>
+</li><li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+    <a href="#">栏目11</a>
+    <ul>
+        <li><a href="#">菜单11</a></li>
+        <li><a href="#">菜单11</a></li>
+        <li><a href="#">菜单11</a></li>
+        <li><a href="#">菜单11</a></li>
+        <li><a href="#">菜单11</a></li>
+    </ul>
+</li>
+    </li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

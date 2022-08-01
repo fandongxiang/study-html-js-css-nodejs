@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location对象其它方法</title>
+</head>
+
+<body>
+    <button class="assign">assign重定向</button>
+    <button class="replace">replace重定向</button>
+    <button class="reload">刷新</button>
+    <button class="reloadTrue">强制刷新</button>
+    <script>
+        var assign = document.querySelector('.assign')
+        var replace = document.querySelector('.replace')
+        var reload = document.querySelector('.reload')
+        var reloadTrue = document.querySelector('.reloadTrue')
+        // 记录浏览器记录，能后退
+        assign.addEventListener('click', function () {
+            location.assign('http://www.baidu.com')
+        })
+        // 不记录浏览器记录，不能后退
+        replace.addEventListener('click', function () {
+            location.replace('http://www.baidu.com')
+        })
+        // f5刷新，从网页缓存刷新
+        reload.addEventListener('click', function () {
+            location.reload()
+        })
+        reloadTrue.addEventListener('click',function() {
+            location.reload(true)
+        })
+    </script>
+</body>
+
+</html>

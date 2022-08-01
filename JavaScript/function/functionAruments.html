@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    //函数的参数
+    /*function 函数名(形参1，形参2，……) {   //声明函数中的参数为形参
+
+      };
+    函数名 (实参1，实参2，…………)             //调用函数中的参数为实参
+     */
+
+    //形参和实参不匹配问题
+    function getSum(num1,num2) {
+      console.log(num1 + num2)
+    };
+    getSum(1,2);                        //输出正常结果；
+    getSum(1,2,3);                      //实参个数大于形参个数，会取到形参的个数
+    getSum(1);                          //实参个数少于形参个数，未定义的实参为undifined，undifiner + 数字 = NaN；
+    getSum();
+  </script>
+</body>
+</html>

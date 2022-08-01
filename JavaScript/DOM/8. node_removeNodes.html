@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>删除节点</title>
+  </head>
+  <body>
+      <button>delete</button>
+    <ul>
+      <li>javascript1</li>
+      <li>javascript2</li>
+      <li>javascript3</li>
+      <li>javascript4</li>
+    </ul>
+
+    <script>
+      // 1. get parentNode;
+      var ul = document.querySelector('ul');
+      // 2. remove childNode: parentNode.removeChild(child)
+      ul.removeChild(ul.children[0]);
+    </script>
+  </body>
+</html>

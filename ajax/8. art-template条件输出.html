@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件输出</title>
+    <script src="./JQuery.js"></script>
+    <script src="./template-web.js"></script>
+</head>
+<body>
+    <script type="text/html" id="flag">
+        {{if flag===1}}
+        <h1>flag的值是：{{flag}}</h1>
+        {{else if flag===0}}
+        <h3>flag的值是：{{flag}}</h3>
+        {{/if}}
+    </script>
+
+    <script>
+        const data = {flag: 0}
+        const dataStr = template('flag',data)
+        $('body').append(dataStr)
+    </script>
+</body>
+</html>

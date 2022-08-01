@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button>ldh</button>
+  <button>zxy</button>
+  <img src="image/ldh.jpeg" alt="LiuDehua" title="LiuDehua" style="display: block;width: 300px">
+
+  <script>
+    var ldh = document.querySelector('button');
+    var zxy = document.querySelectorAll('button')[1];
+    var img = document.querySelector('img');
+    ldh.onclick = function() {
+      img.src = 'image/ldh.jpeg';
+      img.title = 'LiuDehua'
+    };
+    zxy.onclick = function () {
+      img.src = 'image/zxy.jpg';
+      img.title = 'ZhangXueyou'
+    };
+  </script>
+
+  <!--Modify form properties-->
+    <button id="bt">button</button>
+    <input type="text" value="Please input your name">
+  <script>
+    var btn = document.querySelector('#bt');
+    var input = document.querySelector('input');
+    btn.onclick = function () {
+      input.value = 'Your name is: fan';
+      /*btn.disabled = true;*/
+      this.disabled = true;       // note: this target to element which call the function
+    };
+  </script>
+</body>
+</html>

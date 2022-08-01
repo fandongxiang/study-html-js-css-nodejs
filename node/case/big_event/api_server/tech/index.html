@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <script src="../vue/vue.js"></script>
+  <script type="text/javascript">
+    function displaySubMenu(li) {
+      var subMenu = li.getElementsByTagName("ul")[0];
+      subMenu.style.display = "block";
+    }
+
+    function hideSubMenu(li) {
+      var subMenu = li.getElementsByTagName("ul")[0];
+      subMenu.style.display = "none";
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>工艺任务管理系统</h1>
+  <div class="search">
+    <input type="text" value="输入关键词">
+    <button><img src="./image/search.png"></button>
+
+  </div>
+</div>
+
+<!-- pc row navbar-->
+<div id="pcrow">
+  <ul id="navigation">
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+      <a href="index_frame_index.html" target="b">首页</a>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+      <a href="#">工艺</a>
+      <ul>
+        <li v-for="message in tech" v-html="message">{{message}}</li>
+      </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+      <a href="tech_index.html" target="b">产品</a>
+      <ul>
+        <li v-for="message in product"><a href="#">{{message}}</a></li>
+      </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+      <a href="#">热场</a>
+      <ul>
+        <li v-for="message in heat"><a href="#">{{message}}</a></li>
+      </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+      <a href="#">指标</a>
+      <ul>
+        <li v-for="message in target"><a href="#">{{message}}</a></li>
+      </ul>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+      <a href="#">公告</a>
+    </li>
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+      <a href="#">我的</a>
+    </li>
+  </ul>
+</div>
+<!--nav bar-->
+
+
+<div class="content">
+  <iframe style="width: 100%;height: 100%;right: 0px" src="index_frame_index.html" name="b">
+  </iframe>
+</div>
+<!-- phone Div Grid -->
+<!--<div class="row">
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+
+    <div class="column">
+        <div class="img">客服悦悦</div>
+        <div class="img">客服悦悦</div>
+    </div>
+</div>-->
+
+<!--footer-->
+<!-- <footer>
+     <div class="nav2">首页</div>
+     <div class="nav2">指标</div>
+     <div class="nav2">公告</div>
+     <div class="nav2">我</div>
+ </footer>-->
+<script>
+  new Vue({
+    el: '#navigation',
+    data: {
+      tech: ['<a href="index_tech_abnormalPuller.html">异常炉台</a>',
+        '<a href="abnormalPuller_index.html">停炉整改</a>'],
+      product: ['产品规格'],
+      heat: ['规格'],
+      target: ['单产', '品质'],
+      techurl: []
+    }
+  })
+</script>
+
+</body>
+</html>

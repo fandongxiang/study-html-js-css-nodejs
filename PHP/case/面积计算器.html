@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>面积计算器</title>
+    <style>
+      td {
+        height: 30px;
+        width: 150px;
+      }
+      tr td:first-child {
+        text-align: right;
+      }
+      tr td:last-child {
+        width: 80px;
+        text-align: right;
+      }
+      tr td:last-child input {
+        width: 80px;
+      }
+      tr td:last-child {
+        width: 120px;
+      }
+      #last {
+        text-align: center;
+      }
+      .angle {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form action="面积计算器.php">
+      <table>
+        <tr>
+          <td class="change">请输入正方形的边长</td>
+          <td><input type="text" name="num1" id=""></td>
+        </tr>
+        <tr class="angle">
+          <td>请输入等腰角度</td>
+          <td><input type="text" name="num2" id=""></td>
+        </tr>
+        <tr>
+          <td>请选择图形</td>
+          <td>
+            <select name="opr">
+              <option value="正方形">正方形</option>
+              <option value="圆形">圆形</option>
+              <option value="等腰三角形">等腰三角形</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" id="last">
+            <input type="submit" value="提交">
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      var table = document.querySelector('table');
+      var angle = document.querySelector('.angle');
+      var selector = document.querySelector('select');
+      console.log(selector.options[1].text);
+
+      selector.addEventListener('change',function () {           //change获取selector的变化值
+        if (selector.value == '等腰三角形') {
+          angle.style.display = 'table-row';
+          document.querySelector('.change').innerHTML = '请输入底边长';
+        }else {
+          angle.style.display = 'none';
+        };
+        if (selector.value == '圆形') {
+          document.querySelector('.change').innerHTML = '请输入半径';
+        }
+        console.log('hello');
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    //countinue
+    for (var i = 1;i <= 10;i++) {
+      if (i == 5){
+        continue //遇到continue，跳过当前continue中后面的语句，执行下一次循环
+      }
+      console.log('这是第' +i + '个数，这个循环会跳过5')
+    };
+    //求1-100之间，除了能被7整除之外的整数和
+    var sum = 0;
+    for (var j = 1; j <= 100; j++) {
+      if ( j % 7 == 0) {
+        continue
+      }
+      sum += j;
+    };
+    console.log(sum);
+
+    //break关键词
+    for (var k = 1; k <= 100; k++){
+      if (k == 20){
+        break
+      };
+      console.log('这是第' + k + '个数');
+    }
+  </script>
+</body>
+</html>

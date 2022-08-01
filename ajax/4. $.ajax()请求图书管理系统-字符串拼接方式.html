@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书管理系统</title>
+    <script src="./JQuery.js"></script>
+    <style>
+        p {
+            background-color: rgb(62, 180, 216);
+            padding: 10px 10px;
+        }
+        .add {
+            height: 50px;
+        }
+
+        input {
+            margin-left: 20px;
+        }
+        table,tr,td {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px 10px;
+        }
+        thead tr td {
+            background: rgb(247, 255, 205);
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="addbook">
+        <p>添加新图书</p>
+        <div class="add">
+            书  名<input type="text" name="" id="bookname" autocomplete="on">
+            作  者<input type="text" name="" id="author" autocomplete="on">
+            出版社<input type="text" name="" id="publisher" autocomplete="on">
+            <button class="btn">添加</button>
+        </div>
+    </div>
+  
+    <table border="1">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>书名</td>
+                <td>作者</td>
+                <td>出版社</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        // $.ajax({
+        //     type:'请求类型'
+        //     URL:'地址',
+        //     data:'携带参数',
+        //     success:function(res) {请求成功后的回调函数}
+        // })
+        $(function() {
+            // 添加图书
+            $('.btn').on('click',function(){
+                const book_info = {bookname:$('#bookname').val(),author:$('#author').val(),publisher:$('#publisher').val()}
+                $.ajax({
+                    type:'post',
+                    url: 'http://127.0.0.1:3007/api/addbook',
+                    data: book_info,
+                    success: function(res) {
+                        console.log(res)
+                        getbooklist()
+                    }
+                })
+            })
+
+            // 渲染图书列表
+            function getbooklist() {
+                $('tbody').children().remove()
+                $.ajax({
+                    type: 'get',
+                    url: 'http://127.0.0.1:3007/api/getbook',
+                    success: function (res) {
+                        const row = []
+                        $.each(res,function (i,item) {
+                            row.push(`<tr><td>${item.id}</td><td>${item.bookname}</td/><td>${item.author}</td>
+                            <td>${item.publisher}</td><td><a href="javascript:;" class="del" data-id="${item.id}">删除<a/></td><tr/>`)
+                        })
+                        $('tbody').empty().append(row.join(''))
+                    }
+                })
+            }
+            getbooklist()
+            
+            // 添加删除事件
+            $('tbody').on('click','.del',function () {
+                const id = $(this).attr('data-id')
+                $.ajax({
+                    type: 'get',
+                    url: 'http://127.0.0.1:3007/api/delbook',
+                    data: {id: id},
+                    success: function () {
+                        console.log('删除成功')
+                        getbooklist()                            // 刷新图书列表要放在成功函数里
+                    }
+                })
+                // 数据库更新中update加别名才能更新多条
+            })
+        })
+    </script>
+</body>
+</html>

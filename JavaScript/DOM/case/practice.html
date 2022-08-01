@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .father {
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            /*border: 1px solid transparent;*/
+            overflow: hidden;
+            background-color: darkgoldenrod;
+        }
+
+        .son {
+            margin: 50px auto;
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+    <script>
+      var father = document.querySelector('.father');
+      var son = document.querySelector('.son');
+     /* father.onclick = function () {
+        alert('father')
+      }
+      son.onclick = function () {
+        alert('son')
+      }*/
+      father.addEventListener('click',function () {
+        alert('father')
+      });
+      son.addEventListener('click',function (e) {
+        alert('son');
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

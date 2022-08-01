@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>节点操作</title>
+  </head>
+  <body>
+    <div>
+      <br>
+      <a href="#"></a>
+    </div>
+    <a href="">
+      <img alt="" src="">
+    </a>
+
+    <script>
+      // 1. parentNode
+      var br = document.querySelector('br');
+      var div = br.parentNode;
+      console.log(div);
+      console.log('1.1')
+
+      // 2.1 parentNode.childNodes
+      var div = document.querySelector('div');
+      var div_childNodes = div.childNodes;
+      console.log(div_childNodes);              // note: childNodes include textNodes and elementNodes
+      console.log(div.firstChild);
+      console.log(div.lastChild);
+      /* get elementNodes*/
+      function getElementNodes(arr) {
+        for (var i = 0; i < arr.childNodes.length; i++) {
+          var newArr = [];
+          if (arr.childNodes[i].nodeType == 1) {
+            console.log(arr.childNodes[i])
+          }
+        }
+      };
+      getElementNodes(div);
+      console.log('2.1')
+
+      // 2.2 parentNode.children
+      var div = document.querySelector('div');
+      var div_children = div.children;
+      console.log(div_children);
+
+      // 2.3 parent.firstElementChild
+      var div = document.querySelector('div');
+      var div_firstElementChild = div.firstElementChild;
+      console.log(div_firstElementChild);
+
+      // 2.4 parent.lastElementChild
+      var div = document.querySelector('div');
+      var div_lastElementChild = div.lastElementChild;
+      console.log(div_lastElementChild);
+
+    </script>
+  </body>
+</html>

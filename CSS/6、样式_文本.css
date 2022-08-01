@@ -1,0 +1,29 @@
+h1{
+    color: red;
+    text-align: center;
+    text-shadow:3px 3px 10px red; /*阴影：向右、向下、清晰度*/
+}
+h3{
+    text-indent: 15px;   /*首行缩进*/
+}
+#wrap{
+    text-wrap: normal;   /*换行*/
+    width: 150px;
+}
+footer{
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    background-color: #d8d1d1;
+    height: 5%;
+    width: 100%;
+    border: black solid 1px;
+    text-align: center;
+}
+div:hover{
+    background-color: blue;
+}
+div{
+    height: 100%;
+    width: 25%;
+}

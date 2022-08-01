@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2022.04.01</title>
+  <script>
+    //create a function to reversal any array
+    function revArr(arr) {
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        newArr[arr.length - 1 - i] = arr[i];
+      };
+      return newArr;                       //attention: 'return' outside 'for' loop
+    };
+    var arr = revArr([1,5,3,4]);
+    console.log(arr);
+
+    //create a function to encapsulate bubbleSort
+    function sortArr(arr) {
+      var temp;
+      for (var i = 0; i <arr.length - 1; i++) {
+        for (var j = 0; j < arr.length - 1 - i; j++) {
+          if (arr[j] > arr[j+1]) {
+            temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+        }
+      };
+      return arr;
+    };
+    var arr = sortArr([5,4,21,65,0]);
+    console.log(arr);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

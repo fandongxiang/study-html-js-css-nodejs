@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <ul>
+      <li>lili1</li>
+      <li>lili2</li>
+      <li>lili3</li>
+      <li>lili4</li>
+      <li>lili5</li>
+    </ul>
+  </body>
+  <script>
+    // syntax : e.target
+    var ul = document.querySelector('ul');
+    ul.addEventListener('click',function (e) {
+      console.log(e.target);                     // e.target return who click
+      console.log(this);                         // this return targetNode
+    })
+  </script>
+</html>

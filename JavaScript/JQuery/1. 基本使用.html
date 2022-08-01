@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>基础</title>
+    <script src="JQuery.js"></script>
+    <style>
+      div {
+        width: 500px;
+        height: 300px;
+        background-color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //一、jQuery的入口函数
+
+      //1.等着DOM元素加载完毕再执行函数
+      // $(document).ready(function () {
+      //   $('div').hide();
+      // })
+
+      //2.等着DOM加载完毕再执行函数
+      $(function () {
+        // $('div').hide();               //$是jQuery中的顶级对象，相当于包装，window
+      });
+      jQuery(function () {             //$符号相当于jQuery的简称
+        // alert('hello')
+      });
+
+
+    </script>
+    <div></div>
+    <script>
+      //二、Dom对象和jQuery对象的区别
+      var div = document.querySelector('div');
+      console.dir(div);
+      $('div');
+      console.dir($('div'));           //jQuery获取到的对象是伪数组，包装起来的
+      //注意：Dom获取到的对象和jQuery获取到的对象不能混用,原因是jQuery获取到的是伪数组
+      div.style.height = '500px';
+      // $('div').style.height = '500px';    //错误
+      // div.hide();                         //错误
+
+      //三、Dom对象和jQuery对象的相互转换
+      // 1. Dom对象转换为JQuery对象：直接将Dom对象丢进$()里
+      $(div).hide();
+      // 2. jQuery对象转换为DOM对象：通过给添加数组索引号
+      $('div')[0].style.display = 'block';
+      $('div').get(0).style.display = 'none';
+    </script>
+  </body>
+</html>

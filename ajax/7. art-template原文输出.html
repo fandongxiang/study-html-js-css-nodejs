@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原文输出</title>
+    <script src="./JQuery.js"></script>
+    <!-- 1. 导入模板引擎 -->
+    <script src="./template-web.js"></script>
+</head>
+<body>
+    <!-- 3. 定义模板 -->
+    <script type="text/html" id="text">   
+        <!-- 主要用于服务器端渲染 -->
+        {{@ text}}                                          
+    </script>
+ 
+    <script>
+        // 2. 定义模板数据
+        const data = {text:'<h3>测试原文输出</h3>'}
+
+        // 4. 调用 template 函数
+        const dataText = template('text',data)
+
+        // 5. 渲染页面
+        $('body').html(dataText)
+
+    </script>
+</body>
+</html>

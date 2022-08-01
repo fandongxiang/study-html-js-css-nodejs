@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //String primitives and String objects
+    //In contexts where a method is to be invoked on a primitive string or a property lookup occurs,
+    //JavaScript will automatically wrap the string primitive and call the method or perform the property lookup.
+    var s_prim = 'food';
+    var s_obj = new String(s_prim);
+    console.log(typeof s_prim);
+    console.log(typeof s_obj);
+
+    // 1. string.indexOf(substring,number) : substring to search for;an index greater or equal to the number
+    //note: return the index of the first occurrence of the specified substring
+    var str = 'javascript';
+    console.log(str.indexOf('a'));
+    // case: search for all of index of substring and occurred times
+    var str = 'ajsaljajiyua';
+    function indexOfSub(sub,str) {
+      var arr = [];
+      for (var i = 0; i < str.length; i++) {
+        if (str.indexOf(sub,i) !== -1) {
+          i = str.indexOf(sub,i);
+          arr.push(i);
+        }
+      };
+      return arr;
+    };
+    console.log(indexOfSub('a','baca'));
+    function occurTimesOfSub(sub,str) {
+      var j = 0;
+      for (var i = 0; i < str.length; i++) {
+        if (str.indexOf(sub,i) !== -1) {
+          j++;
+          i = str.indexOf(sub,i);
+        }
+      };
+      return j;
+    };
+    console.log(occurTimesOfSub('a','javascript'));
+
+    // 2. string.charAt(index)
+    var str = 'javascript';
+    console.log(str.charAt(0));
+    function tranStr(str) {
+      var arr = [];
+      for (var i = 0; i < str.length; i++) {
+        var sub = str.charAt(i);                 //difference with 'str[i]'
+        arr.push(sub);
+      }
+      return arr;
+    };
+    console.log(tranStr('javascript'));
+
+    // 3. string.charCodeAt(index) : return ASCII of index's character ,judge what user input keynumber
+    var str = '10'
+    console.log(str.charCodeAt(1));
+
+    // 4. str[] : HTML appendment
+    console.log('fandongxiang'[0]);
+
+    //case : ⭐⭐⭐⭐⭐Find the character with the most occurrences in the string
+    var obj = {
+      name: 'fan',
+      age: 18
+    };
+    if (obj['name']) {
+      console.log('have')
+    };
+    if (obj['sex']) {
+
+    } else {
+      console.log('no')
+    };
+    console.log('------------------------')
+    var str = 'fandongxiang';
+    var obj = [];
+    for (var i = 0; i < str.length; i++) {
+      var chars = str.charAt(i);
+      if (obj[chars]) {              //the 'obj[chars]' is value in key-value of object
+        obj[chars]++
+      } else {
+        obj[chars] = 1               //add key-value to object
+      };
+    };
+    console.log(obj);
+    var max = 0;
+    var ch = '';
+    for (k in obj) {
+      if (obj[k] > max) {
+        max = obj[k];
+        ch = k;
+      }
+    };
+    console.log('most occurrences in string is:' + ' ' + ch)
+
+    // 4. string.substr(star,lenght)
+    console.log('javascript'.substr(4,6));
+
+    // 5. string.replace('a','b') : replace the first 'a' to 'b'
+    var str = '123123123';
+    for (var i = 0; i < str.length; i++) {                //use for loop tranverse string
+        str = str.replace('1','2')
+      }
+    console.log(str);
+    while (str.indexOf('3') !== -1) {                    //use while loop determine wheather 'a' exist
+      str = str.replace('3','4')
+    };
+    console.log(str);
+
+    // 5. string.split()  Convert string to array
+    var str = 'zhou,wu,zheng,wang';
+    console.log(str.split(','));
+    var str1 = 'zhou&wu&zheng&wang';
+    console.log(str1.split('&'))
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

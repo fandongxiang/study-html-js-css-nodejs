@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板引擎</title>
+    <script src="./JQuery.js"></script>
+    <!-- 1. 导入模板引擎 -->
+    <script src="./template-web.js"></script>
+</head>
+<body>
+    <p><a href="http://aui.github.io/art-template/zh-cn/index.html">中文官方首页</a></p>
+    <div class="div"><span class="name">姓名：</span> <span class="age">年龄：</span></div>
+
+
+    <!-- 3. 定义模板 -->
+    <!-- 3.1 定义模板的 HTML 结构，必须定义在 script 中 -->
+    <script type="text/html" id="tpl-user">
+        {{name}}
+    </script>
+    <script type="text/html" id="tpl-name">
+        {{age}}
+    </script>     
+    <script>
+        // 2. 定义需要渲染的数据
+        var data = {name:'zs',age: 20}
+
+        // 4. 调用 template  函数
+        const dataStr=  template('tpl-user',data)
+        const dataAge=  template('tpl-name',data)
+        console.log(dataStr);
+
+        // 5. 渲染 HTML 结构
+        $('.name').append(dataStr)
+        $('.age').append(data['age'])                         // 单个数据不需要使用模板引擎，复杂的 HTML 结构才需要
+    </script>
+</body>
+</html>

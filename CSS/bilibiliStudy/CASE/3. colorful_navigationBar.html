@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>五彩导航栏</title>
+    <style>
+      a {
+        display: inline-block;         /*inline element transfer to inline-block*/
+        width: 120px;
+        height: 58px;
+        text-decoration: none;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+      }
+
+      .nav .nav1:link,.nav .nav1:visited {
+        background-image: url(images/bg1.png);
+      }
+      .nav .nav2 {
+        background-image: url(images/bg2.png);
+      }
+      .nav .nav3 {
+        background-image: url(images/bg3.jpg);
+      }
+      .nav .nav4 {
+        background-image: url(images/bg4.png);
+      }
+      .nav .nav5 {
+        background-image: url(images/bg5.png);
+      }
+
+      .nav .nav1:hover {
+        background-image: url(images/bg11.png);
+      }
+      .nav .nav2:hover {
+        background-image: url(images/bg22.png);
+      }
+      
+      body {
+        background-image: url(images/bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center 70px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <a class="nav1" href="#">首页</a>
+      <a class="nav2" href="#">工艺</a>
+      <a class="nav3" href="#">产品</a>
+      <a class="nav4" href="#">品质</a>
+      <a class="nav5" href="#">热场</a>
+    </div>
+
+  </body>
+</html>

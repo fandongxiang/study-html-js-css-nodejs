@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    //要点分析：
+    //1、循环部分划分：循环体内分为选择项和返回主界面两项循环部分；
+    //2、循环条件：循环体结束必须输出一个条件，作为下次循环的判断；
+    //3、嵌套：选择和循环嵌套；
+    var choose = prompt('请输入你要的操作\n1、存款\n2、取款\n3、查询余额\n4、退出')
+    var banlance = 0;
+    do {
+      switch (parseInt(choose)) {
+        case 1:
+          var putIn = prompt('请输入存款金额：');
+          alert('已存入' + putIn + '元');
+          banlance += parseInt(putIn);
+          break;
+        case 2:
+          var putOut = prompt('请输入取款金额：');
+          alert('已取出' + putOut + '元');
+          banlance -= parseInt(putOut);
+          break;
+        case 3:
+          alert('当前账户余额为' + banlance + '元');
+          break;
+      };
+      putOut = 0;
+      putIn = 0;
+      var choose = prompt('请输入你要的操作\n1、存款\n2、取款\n3、查询余额\n4、退出');
+    } while (parseInt(choose) !== 4);
+  </script>
+</body>
+</html>

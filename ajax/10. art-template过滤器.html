@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器</title>
+    <script src="./JQuery.js"></script>
+    <script src="./template-web.js"></script>
+
+</head>
+
+<body>
+
+    <script type="text/html" id="reg">
+        {{regdate | dateFormat}}
+    </script>
+
+    <script>
+        $(function () {
+            const regTime = { regdate: '2022-2-24 18:20:36' }
+            // 过滤器函数必须写在 template 函数之前！！！
+            template.defaults.imports.dateFormat = function (time) {
+                let date = new Date(time)
+                var y = date.getFullYear()
+                var m = date.getMonth() + 1
+                var d = date.getDate()
+                // 过滤器必须有 return 返回值
+                return y + '年' + m + '月' + d + '天'
+            }
+            const dataStr = template('reg', regTime)
+            $('body').html(dataStr)
+        })
+
+    </script>
+</body>
+
+</html>

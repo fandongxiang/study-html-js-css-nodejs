@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+/* 设置 body 元素的样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题 / LOGO */
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+/* 设置顶部导航栏样式 */
+.navbar {
+    display: flex;
+    background-color: #333;
+}
+
+/* 设置导航条链接演示 */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* 更改鼠标悬停时的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 创建并排的非等列 */
+/* 侧栏 / 左侧列 */
+.side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* 主列 */
+.main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 伪图像，仅供示例 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 页脚 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+/* 响应式布局 - 当屏幕小于 700 像素宽时，让两列堆叠而不是并排 */
+@media screen and (max-width: 700px) {
+    .row, .navbar {
+        flex-direction: column;
+    }
+}

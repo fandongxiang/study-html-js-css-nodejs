@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    // 1. Array.isArray() : determines whether the passed value is an array,and return 'true' or 'false'
+    var isArray = Array.isArray([1,2,6,5]);
+    console.log(isArray);
+    //add element to array
+    // 1. array.push() : appends one or more elements to the end of an array ,and return the new length of the array
+    var arr = [1,2,3,4]
+    console.log(arr.push(5));            //return the length
+    console.log(arr);
+    // 2. array.unshift() : add one or more elements to the beginning of an array,and return the new length of the array
+    var arr1 = [1,2,3,4];
+    console.log(arr1.unshift(3,2));  //note: multiple elements are passed as parameters,they're inserted in chunk
+    console.log(arr1);
+    function unshiftArrElenment (arr,newArr) {      //the built-in method of array.unshift
+      for (var i = 0; i < arr.length; i++) {
+        newArr[newArr.length] = arr[i]
+      };
+      return newArr
+    };
+    console.log(unshiftArrElenment([1,2,3],[4,5]));
+
+    //remove element from array
+    // 1. array.pop() : remove the last element from an array,return that element
+    var arr2 = [5,6,5,8,'fan'];
+    console.log(arr2.pop());
+    console.log(arr2);
+    // 2. array.shift() : remove the first element from an array,return that element
+    var arr3 = [5,7,4,6,8];
+    console.log(arr3.shift());
+    console.log(arr3);
+
+    //Get index of element from array
+    //Method 1:array.indexOf() : Get the first indes at which a given elemment can be found,or -1 if it's  not present
+    console.log([2,6,4,,7,4].indexOf(4));
+    //Method 2: array.lastIndexOf() :Get the last indes at which a given elemment can be found,or -1 if it's  not present
+    // case: screen array
+    var arr4 = [100,500,200,300];
+    function getScreenArr(arr,num) {
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < num) {
+          /*newArr[newArr.length] = arr[i];*/
+          newArr.push(arr[i])
+        }
+      };
+      return newArr;
+    };
+    console.log(getScreenArr(arr4,300));
+
+    // case: remove repeat element from array
+    function removeRepeat(arr) {
+      var newArr = [];
+      for (var i =0; i <arr.length; i++) {
+       if (newArr.indexOf(arr[i]) == -1) {                //note: indexOf can determine element wheather exit;
+         newArr.push(arr[i])
+       }
+      };
+      return newArr;
+    };
+    console.log(removeRepeat([1,2,1,5,2,'a','b','a','c']));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>callEachOther</title>
+</head>
+<body>
+  <script>
+    //函数是可以相互相互调用
+    function fn1() {
+      console.log(111);
+      fn2();
+      console.log('fn2')
+    };
+    function fn2() {
+      console.log(222);
+      console.log('fn1')
+    };
+    fn1();
+
+    //案例：用户输入年份，输出当前年份二月份的天数；
+    //（1）输入年份不定：使用函数调定义方法；
+    //（2）二月份天数：平年28天，闰年29天
+    function getDay(month) {
+      if (getLeap) {                     //巧用调用的函数返回值为ture || false，if本质时判断tureFalse
+        return '该年2月份是29天'
+      } else {
+        return '该年2月份是28天'
+      }
+    };
+    function getLeap(a) {
+      var flag = false;                 //定义一个初始值
+      if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0) {
+        flag = true;                   //利用if为真时输出相反值
+      };
+      return flag;                      //if为假时纯输出原来值
+    };
+    var day = getDay(2014);
+    console.log(day);
+  </script>
+</body>
+</html>

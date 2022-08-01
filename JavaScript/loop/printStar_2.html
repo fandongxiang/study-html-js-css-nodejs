@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--案例：用户输入首行个数，及行数，以正三角方式打印处相应星星-->
+<!--案例分析：
+    1、案例分为用户输入、事件处理及打印输出；
+    2、事件处理采用双重for循环，外层循环一次内层执行全部，且外层变量作为内层条件-->
+<!--用户呈现-->
+  <div id="star"></div>
+  <script>
+    //1、用户输入
+    var number = prompt('请输入打印行数');
+    //2、循环打印
+    var star = ''
+/*    for (var i = 1; i <= number; i++) {
+      for (var j = 1; j <= i; j++) {
+        star = star + '☆';
+      };
+      console.log(star);
+      star = '';
+    }*/
+      for (var i = 1; i <= number; i++) {
+        for (var j = 1; j <= i; j++) {
+          star = star + '☆';
+        }
+        star += '\n';
+      }
+      document.getElementById('star').innerHTML = star;
+  </script>
+</body>
+</html>

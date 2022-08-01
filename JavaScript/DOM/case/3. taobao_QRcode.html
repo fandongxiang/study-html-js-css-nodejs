@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      a {
+        display: block;
+        position: relative;
+        width: 1902px;
+        height: 100px;
+        background-image: url('../image/jingdong-top.png');
+      }
+
+      .close {
+        position: absolute;
+        left: 1665px;
+        top: 8px;
+        width: 32px;
+        height: 30px;
+        background-image: url('../image/jingdong-top-close.png');
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">
+      <div class="close"></div>
+    </a>
+
+    <script>
+      var a = document.querySelector('a');
+      var btn = document.querySelector('div');
+      btn.onclick = function () {
+        a.style.display = 'none'
+      }
+    </script>
+  </body>
+</html>

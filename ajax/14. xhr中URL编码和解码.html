@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编码和解码</title>
+</head>
+<body>
+    <script>
+        // 1. 编码接口： encodeURI()
+        console.log(encodeURI('樊东祥'));                // 输出：%E6%A8%8A %E4%B8%9C %E7%A5%A5 三个百分号表示一个汉字
+        // 2. 解码接口：decodeURI()
+        console.log(decodeURI('%E6%A8%8A%E4%B8%9C%E7%A5%A5'));
+    </script>
+</body>
+</html>

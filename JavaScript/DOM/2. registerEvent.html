@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    p {
+        background: pink;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button>click me</button>
+    <p>aaabbbccc</p>
+  </div>
+  <script>
+    //The step to register event
+    // First: get element that need to register event
+    var btn = document.getElementsByTagName('button')[0];
+    var p = document.getElementsByTagName('p')[0];
+    // Second: add event type to the element
+    // Last: add event processing program
+    btn.onclick = function() {
+      p.innerHTML = 'hello';
+    }
+  </script>
+
+</body>
+</html>

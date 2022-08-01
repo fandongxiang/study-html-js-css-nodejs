@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mathmatical symbol</title>
+    <script>
+        var num = 0.2 + 0.3;
+        console.log(num == 0.5);
+
+        var num = 10;
+        ++num;
+        console.log(num++)
+        console.log(++num + 1);
+        console.log(num++ +1);
+
+        var age = 5;
+        console.log(age++ + ++age);
+
+        console.log(20 == '20');
+        console.log(20 === '20');
+        console.log('fan' == 'fan');
+
+        console.log(3 > 5 && 5 >3 );
+        console.log(3 > 5 || 5 >3 );
+
+        /*短路运算*/
+        console.log(123 && 456);
+        console.log(123 && 456 && 789);
+        console.log(0 && 456);
+        console.log(null && 456);
+        console.log('' && 456);
+        console.log(undefined && 456 && 789);
+        console.log('-------------------------')
+        console.log(123 || 456);
+        console.log(123 || 456 || 789);
+        console.log(0 || 456);
+        console.log(null || 456);
+        console.log('' || 456);
+        console.log(undefined || 456 || 789);
+        console.log('-------------------------')
+        var num = 0;
+        console.log(123 || num++);
+        console.log(num);
+        console.log('-------------------------')
+        var f = 4;
+        f +=3;
+        console.log(f);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

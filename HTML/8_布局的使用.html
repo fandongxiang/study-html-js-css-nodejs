@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div布局</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+        }
+        #container{
+            width: 100%;
+            height: 900px;
+            background-color: aliceblue;
+        }
+        #heading{
+            width: 100%;
+            height: 10%;
+            background-color: cadetblue;
+            text-align: center;
+            line-height: 90px;
+            font-size: 40px;
+        }
+        #container_menu1{
+            width: 30%;
+            height: 30%;
+            background-color: blue;
+            float: left;
+            margin: 120px;
+            text-align: center;
+            line-height:300px;
+            font-size: 30px;
+        }
+        #container_menu2{
+            width:30%;
+            height:30%;
+            background-color: chartreuse;
+            float: right;
+            margin: 120px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+        }
+        #null{
+            width: 100%;
+            height: 180px;
+            background-color: aliceblue;
+            clear: both;
+        }
+        #footing{
+            width: 100%;
+            height: 10%;
+            background-color: #af9999;
+            clear: both;
+            text-align: center;
+            line-height: 90px;
+            font-size: 20px;
+            display: flex;
+        }
+        .img_text{
+            width: 70%;
+            height: 25%;
+        }
+        #footing_index{
+            width: 33%;
+            height: 100%;
+            flex-direction: column;
+        }
+        #footing_anno{
+            width: 33%;
+            height: 100%;
+        }
+        #footing_my{
+            width: 33%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+   <div id="container">
+       <div id="heading" align="center">工艺任务管理系统</div>
+       <div id="container_menu1">工艺管理</div>
+       <div id="container_menu2">任务管理</div>
+       <div id="null"></div>
+       <div id="footing">
+           <div id="footing_index">
+               <div class="img_text"><img src="../images/sea.jpeg" width="40" height="40"></div>
+               <div class="img_text">首页</div>
+           </div>
+           <div id="footing_anno">公告</div>
+           <div id="footing_my">我</div>
+       </div>
+   </div>
+</body>
+</html>

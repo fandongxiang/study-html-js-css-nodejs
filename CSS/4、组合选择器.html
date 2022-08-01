@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组合选择器</title>
+    <style>
+    .div1 p{
+        color: blue;
+    }
+    .div2 > p{
+         color: blue;
+    }
+    .div3+p{
+        color: blue;
+    }
+    .div4~p{
+        color: blue;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>组合选择器：根据它们之间的关系来选择元素</h1>
+    <h3>后代选择器选择指定元素后所有元素样式</h3>
+    <div class="div1">
+        <p>div中的段落1。</p>
+        <p>div中的段落2。</p>
+        <section><p>div中的段落3。</p></section>
+    </div>
+    <p>段落4不在div中</p>
+    <p>段落5不在div中</p>
+
+    <h3>子代选择器只选择指定元素包含的子元素样式</h3>
+    <div class="div2">
+        <p>div中的段落1。</p>
+        <p>div中的段落2。</p>
+        <p><section>段落3不在div子标签中</section></p>
+    </div>
+    <p>段落4不在div中</p>
+    <p>段落5不在div中</p>
+
+    <h3>相邻兄弟选择器匹配所有指定元素的相邻同级元素</h3>
+    <div class="div3">
+        <p>div中的段落1。</p>
+        <p>div中的段落2。</p>
+        <p><section>段落3不在div子标签中</section></p>
+    </div>
+    <p>段落4不在div中</p>
+    <p>段落5不在div中</p>
+
+    <h3>通用兄弟选择器匹配指定元素的所有同级元素</h3>
+    <div class="div4">
+        <p>div中的段落1。</p>
+        <p>div中的段落2。</p>
+        <p><section>段落3不在div子标签中</section></p>
+    </div>
+    <p>段落4不在div中</p>
+    <p>段落5不在div中</p>
+</body>
+</html>

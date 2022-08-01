@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+    1.语法格式
+    do {
+      循环体
+    } while (条件格式)
+    2.语法特点：先执行一次do里循环体，再判断while条件
+  <script>
+    //3.while循环案例
+    //1、打印人的一生，从一岁到一百岁
+    var i = 0;
+    do {
+      console.log('这个人今年' + i + '岁了');
+      i++;
+    } while (i<=100);
+    //2、计算1-100之间所有整数的和
+    var j = 0;
+    var sum = 0;
+    do {
+      sum += j;
+      j++;
+    } while (j<=100);
+    console.log(sum);
+    //3、弹出提示框，显示‘你爱我吗’，如果输入‘我爱你’，循环终止。否则一直弹出
+    var answer = prompt('你爱我吗');
+    do {
+      var answer = prompt('你爱我吗');
+    } while (answer !== '我爱你');
+    alert('我也爱你啊')；
+
+
+  </script>
+</body>
+</html>

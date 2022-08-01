@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //use lieral create
+    var obj = {
+      Uname: 'fandongxiang',           //key-value pair
+      age: 27,
+      sex: 'man',
+      sayHi: function() {            //anonymouse function
+        console.log('hello')
+      }
+    }
+    console.log(obj.Uname);          // objectName.propertyName
+    console.log(obj['age']);         // objectName['propertyName']
+    obj.sayHi();                     // objectName.methodName()
+
+    //ues new object
+    var obj1 = new Object();       //Object 'O' is capital
+    obj1.name = 'xiaotuanzi';
+    obj1.age = 1;
+    obj1.sayHell = function () {
+      console.log("hello~")
+    }
+    console.log(obj1.name);
+    console.log(obj1['age']);
+    obj1.sayHell();
+
+    //use construction: to create many object(having identical property and method)
+    function Family(Uname,sex,age,song) {             //construction first letter is capital
+      this.name = Uname;                          //this target object
+      this.sex = sex;
+      this.age = age;                            //don't need 'return'
+      this.Sing = function(song) {
+        console.log(song)
+      }
+    };
+    //transfer construction: must use 'new consructionName()'
+    var fandongxiang = new Family('fan','man',27);
+    var madongwen = new Family('ma','','');
+    console.log(fandongxiang);
+    console.log(fandongxiang.name);
+    console.log(madongwen.age);          //return NULL
+    madongwen.Sing('love');              //transfer argument to construction.methodName()
+    //case
+    function Hero(name,type,blood,attack) {
+      this.name = name;
+      this.type = type;
+      this.blood = blood;
+      this.attack = attack
+    };
+    var lianPo = new Hero('lianPo','strength','500','melee');
+    var houYi = new Hero('houYi','shooter','100','remote');
+    console.log(lianPo);
+    console.log(houYi.blood);
+/*    for (var i = 1; i < 4 ;i++) {
+      console.log(lianPo[i]);
+    };*/
+
+
+
+  </script>
+</head>
+<body>
+  object = property + method，
+  features:
+  1、unorder set;
+  2、property of object belong to variable,but do't need to variable;
+
+  create object:
+  1、use literal---{};
+  2、use 'new Object';
+  3、use constructor: like java 'class'；
+    implementation process:
+    ① create a null object;
+    ② 'this' target to new object;
+    ③ carry out code of construction and add property&method to the new object;
+    ④ return the new object,so construction don't need 'return'.
+</body>
+</html>

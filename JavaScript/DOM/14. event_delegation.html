@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+  </head>
+  <body>
+    <ul>
+      <li>li1</li>
+      <li>li2</li>
+      <li>li3</li>
+      <li>li4</li>
+      <li>li5</li>
+    </ul>
+  </body>
+  <script>
+    // syntax : parentNode.addEventListener(type,listener)
+    // principle : use eventPropagation ,add eventListener to parentNode
+    var ul = document.querySelector('ul');
+    var lis = document.querySelectorAll('li');
+    ul.addEventListener('click',function (e) {
+      for (var i = 0 ; i < lis.length; i++) {              // kill other
+        lis[i].style.backgroundColor = ''
+      };
+      var li = e.target;                                   // use eventPropagation
+      li.style.backgroundColor = 'pink'
+    });
+  </script>
+</html>

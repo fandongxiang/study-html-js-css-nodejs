@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JQuery.js"></script>
+</head>
+<body>
+    <button class="btn">不带参数的get请求</button>
+    <button class="btnGet">带参数的get请求</button>
+    <p style="background-color: blue;"></p>
+    <script>
+    // $.get(URL,[data],[callback])
+    // $.get 发起不带参数请求
+        $(function() {
+            $('.btn').on('click', () => {
+                $.get('http://127.0.0.1:3007/api/getbook',function(res) {
+                    console.log(res);
+                })
+            })
+            $('.btnGet').on('click',() => {
+                $.get('http://127.0.0.1:3007/api/getbook',{bookname:'红楼梦'},function(res) {
+                    console.log(res);
+                })  
+            })
+            $.get('http://127.0.0.1:3007/api/getbook',function(res) {
+                    console.log(res);
+                    $('p').html('<p>' + res[0]['bookname'] + '<p/>')
+                })
+        })
+    </script>
+</body>
+</html>

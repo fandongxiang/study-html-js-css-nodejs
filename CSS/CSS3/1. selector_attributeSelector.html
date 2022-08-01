@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      input[value] {            /*属性选择器权重是10，div标签选择器权重是1，总权重是11，大于类选择器*/
+        color: chartreuse;
+      }
+
+      input[type=password] {
+        color: red;
+      }
+      div[class^=icon] {
+        color: darkorange;
+      }
+      div[class$=data] {
+        color: blue;
+      }
+      div[class*=img] {
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <!--1. 属性选择器可以不借助class或id选择器-->
+    <input type="text">
+    <input type="text" value="input your name"></br>
+  </body>
+  <!--2. 根据属性值选择元素-->
+  <input id="" name="" type="text">
+  <input id="" name="" type="password" value="hello">
+  <!--3. 选择属性值以相同属性值开头的某些元素-->
+  <div class="icon1">小图标1</div>
+  <div class="icon2">小图标2</div>
+  <div class="icon3">小图标3</div>
+  <div class="icon4">小图标4</div>
+  <div class="other">其它元素</div>
+  <!--4. 选择属性值以相同属性值结尾的某些元素-->
+  <div class="icon1-date">我们都是以相同属性值结尾</div>
+  <div class="icon2-date">我们都是以相同属性值结尾</div>
+  <div class="ico-other">我不是</div>
+  <!--5. 选择只要包含属性值的某些元素-->
+  <div class="1img">我们都包含img</div>
+  <div class="img2">我们都包含img</div>
+  <div class="3img">我们都包含img</div>
+  <!--Note： 类选择器、属性选择器、伪类选择器权重都是10！！-->
+</html>

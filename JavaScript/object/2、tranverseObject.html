@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //tranverse object
+    var obj1 = new Object();       //Object 'O' is capital
+    obj1.name = 'xiaotuanzi';
+    obj1.age = 1;
+    obj1.sayHell = function () {
+      console.log("hello~")
+    }
+    for ( k in obj1) {
+      console.log(k + ':' + obj1[k]);
+    };
+
+  </script>
+</head>
+<body>
+  for ( k in objectName) {
+    objectName[k]                 //'k' target to object'property, so like objectName['property']
+  }
+</body>
+</html>

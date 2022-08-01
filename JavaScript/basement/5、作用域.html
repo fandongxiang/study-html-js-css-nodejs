@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var和let作用域</title>
+</head>
+<body>
+    <h3>全局作用域、函数作用域、块作用域</h3>
+    <ul>
+        <li>全局作用域：在函数之外声明的变量拥有全局作用域</li>
+        <li>函数作用域：函数内声明的变量，函数外不能使用</li>
+        <li>块作用域：如同函数作用域，只能在块内使用</li>
+    </ul>
+    //函数外部，有没有var声明，a都为全局作用域变量
+    <p id="demo"></p>
+    <script>
+        var a = 10;
+        myFunction();
+        function myFunction() {
+            document.getElementById("demo").innerHTML= a + 10;
+        }
+    </script>
+    <b>//注：在函数内部，有var 声明的LastName为函数局部变量，没var 声明的LastName为全局变量</b>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        fan();
+        function fan() {
+            var     LastName = "dongxiang";
+            document.getElementById("demo1").innerHTML =
+                typeof LastName + " " + LastName;
+        }
+        document.getElementById("demo2").innerHTML =
+            typeof LastName;
+    </script>
+    //c为块级域变量，{}内var声明的是没有块作用域，块外可以引用；
+    {}内let声明的为块作用域，块外无法访问
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+        {var d = 5};
+        {let e = 8};
+        document.getElementById("demo3").innerHTML = d;
+        document.getElementById("demo4").innerHTML = e;
+    </script>
+    <h3>块内块外重复声明var时，最终输出以块内为准</h3>
+    <p id="demo5"></p>
+    <script>
+        var f = 34;
+        {var f = 12};
+        document.getElementById("demo5").innerHTML = f;
+    </script>
+    <h3>HTML中的全局变量，作用域是window对象，
+        所以var LastName可以用window.LastName代替</h3>
+    <h3>var和let在重复声明时的规则</h3>
+    <ol>
+        <li>var重新声明var是允许的</li>
+        <li>let重新声明var是不允许的</li>
+        <li>在相同的块或相同的作用域中,let重新声明let是不允许的</li>
+        <li>在相同的块或相同的作用域中，var重新声明let是不允许的</li>
+        <li>在不同的块或相同的作用域中,let重新声明let是允许的</li>
+    </ol>
+    <h3>提升</h3>
+    <ol>
+        <li>通过var声明变量会提升到顶端</li>
+        <li>通过let声明变量不会提升，且<b>在未声明let之前，就使用它会陷入死区</b></li>
+    </ol>
+</body>
+</html>

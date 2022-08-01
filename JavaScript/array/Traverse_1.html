@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+  //删除数组指定元素
+  var arr1 = [1,5,0,6,12,65,45,51,0]
+  var newArr = [];
+  for (var i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== 0) {      //改变嵌套if条件
+      newArr[newArr.length] = arr1[i];
+    }
+  };
+  console.log(newArr);
+
+  //翻转数组
+  var arr2 = [1,2,3,4,5,6,7,8,9,10];
+  var newArr2 = [];
+  for (var i = 0; i < arr2.length; i++) {
+    newArr2[arr2.length - i - 1] = arr2[i]
+  };
+  console.log(newArr2);
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JQuery.js"></script>
+</head>
+    <button id="btnGet">GEt</button>
+    <button id="btnPost">POST</button>
+    <script>
+           $('#btnGet').innerHTML = 'hhhh';
+        $(
+            function() {
+                // 1、测试GET接口
+  
+                $('#btnGet').on('click',function(){
+                    $.ajax({
+                        type:'GET',
+                        url: 'api/get',
+                        data: {name:'zs',age:20},
+                        success:function(res) {
+                            console.log(res);
+                        }
+                    })
+                })
+                // 2、测试POST接口
+                $('#btnPost').on('click',function(){
+                    $.ajax({
+                        type:'POST',
+                        url: 'http://localhost:8080/api/post',
+                        data: {bookname:'水浒传',author:'施耐庵'},
+                        success:function(res) {
+                            console.log(res);
+                        }
+                    })
+                })
+            }
+        )
+    </script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="start">开始定时器</button>
+    <button class="stop">停止定时器</button>
+    <button class="reset">重置定时器</button>
+    <p>0</p>
+    <script>
+        var start = document.querySelector('.start')
+        var stop = document.querySelector('.stop')
+        var count = document.querySelector('p')
+        var reset = document.querySelector('.reset')
+        // 定义全局变量，函数内外都能调用
+        var timer = null
+        var i = 0
+        start.addEventListener('click', function () {            // 多次点击后 ，不断加速？
+            timer = setInterval(function () {
+                count.innerHTML = ++i
+            }, 1000)
+            reset.addEventListener('click', function (e) {
+                i = 0;
+                count.innerHTML = 0;
+                clearInterval(timer)
+            })
+        })
+        stop.addEventListener('click', function () {
+            clearInterval(timer)
+        })
+
+    </script>
+</body>
+
+</html>

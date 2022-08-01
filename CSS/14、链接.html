@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>链接</title>
+    <style>
+        /*未被访问的链接*/
+        a:link,a:visited{
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding:2vw 4vw;
+            background-color:red;
+        }
+        /*已被访问的链接*/
+        /*将鼠标悬停在链接上*/
+        a:hover{
+            color:yellow;
+            text-decoration: underline;
+        }
+        /*点击时的链接*/
+        a:active{
+            color:blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h3>设置链接样式和文本装饰</h3>
+    <a href="#">点我跳转</a>
+    <p>利用display:inline-block实现点击框跳转</p>
+    <p>注意设置多个链接时</p>
+    <p>1、a:hover必须在link和visited之后</p>
+    <p>2、a:active必须在hover之后</p>
+
+</body>
+</html>

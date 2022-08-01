@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>新浪评论</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #999999;
+        }
+
+        li {
+            list-style: none;
+        }
+        .count,.list-time {
+            color: #999999;
+        }
+
+        /*清楚块内元素浮动*/
+        .clearfix::after {
+            clear: both;
+            content: '';
+            /*after伪元素为inline*/
+            display: block;
+        }
+
+        .sina_comment {
+            width: 888px;
+            margin: 100px auto;
+
+        }
+
+        .sina-comment-form {
+            width: 888px;
+            height: 270px;
+            padding: 16px 38px;
+            margin-bottom: 30px;
+            border: 1px #e8e8e8 solid;
+            border-top: 2px #004100 solid;
+        }
+
+        /*hd*/
+        .hd {
+            display: block;
+            clear: both;
+            margin-bottom: 27px;
+        }
+
+        .wrap-title {
+            float: left;
+            padding-left: 37px;
+            background: url("../image/comment_icon-378c5e.png") no-repeat;
+            background-position: 0px center;
+            font-size: 28px;
+            color: #333333;
+        }
+
+        .count {
+            float: right;
+            line-height: 38px;
+            font-size: 16px;
+        }
+
+        .sep {
+            padding: 0 10px;
+        }
+
+        .count a {
+            color: red;
+        }
+
+        /*bd*/
+        .bd {
+            margin-bottom: 20px;
+        }
+
+        /* 用户头像 */
+        .user-head {
+            float: left;
+            width: 47px;
+            height: 47px;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .user-head .head {
+            width: 100%;
+        }
+
+        /* 评论区 */
+        .bd .input-box {
+            float: right;
+            position: relative;
+            width: 742px;
+            height: 75px;
+        }
+
+        /* 通过伪元素背景添加带边框箭头图标*/
+        .bd .input-box::after {
+            content: '';
+            position: absolute;
+            height: 12px;
+            width: 7px;
+            left: -6px;
+            top: 16px;
+            color: #c5c5c5;
+            background: url("../image/arrow-fix.png") no-repeat #f5f5f5;
+        }
+
+        .input-box textarea {
+            float: right;
+            padding: 15px 28px;
+            width: 742px;
+            height: 75px;
+            resize: none;
+            font-size: 16px;
+            background-color: #f5f5f5;
+            outline: none;
+            border: #c5c5c5 1px solid;
+        }
+
+        /* ft */
+        .ft {
+            width: 100%;
+            height: 40px;
+        }
+
+
+        .face {
+            float: left;
+        }
+
+        .face a {
+            display: block;
+            padding-left: 37px;
+            width: 68px;
+            height: 40px;
+            background: url("../image/新浪-sprite.png") no-repeat;
+            background-position: 0 -241px;
+            font-size: 14px;
+            line-height: 40px;
+        }
+
+        .right-action {
+            float: right;
+            width: 300px;
+            height: 40px;
+        }
+
+        .right-action .login-info {
+            float: left;
+            line-height: 40px;
+        }
+
+        .right-action .btn {
+            float: right;
+            width: 90px;
+            height: 100%;
+            padding: 10px 27px;
+            background-color: #ca1d18;
+            color: #fff;
+        }
+
+        /* sina-comment*/
+        .comment-lists {
+            width: 888px;
+            padding: 16px 38px;
+            border: 1px #e8e8e8 solid;
+        }
+        .comment-list-info {
+            float: right;
+            width: 745px;
+            padding-bottom: 10px;
+        }
+
+        /* list-name */
+        .list-name .user-id {
+            color: red;
+            font-weight: 800;
+        }
+
+        .list-name .location {
+            padding-left: 10px;
+            margin-bottom: 10px;
+            color: #999999;
+            font-size: 18px;
+        }
+
+        /* content */
+        .content {
+            margin: 10px 0;
+        }
+
+        .list-time .time {
+            float: left;
+        }
+
+        .list-time .btns {
+            float: right;
+        }
+
+        .btns .reply {
+            padding-left: 60px;
+            background: url("../image/新浪-sprite.png") no-repeat;
+            background-position: 40px 5px;
+        }
+
+        .btns .vote {
+            padding-left: 30px;
+            background: url("../image/新浪-sprite.png") no-repeat;
+            background-position: 12px -94px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="sina_comment">
+      <div class="sina-comment-form">
+        <div class="hd clearfix">
+        <span class="count">
+          <a href="#">10</a>
+          条评论
+          <span class="sep">|</span>
+          <a href="#">421</a>
+          人参与
+        </span>
+          <span class="wrap-title">网友评论</span>
+        </div>
+
+        <div class="bd clearfix">
+          <div class="user-head">
+            <img class="head" alt="" src="../image/新浪微博-头像.jpg">
+          </div>
+          <div class="input-box">
+            <form action="">
+              <textarea placeholder="请写下你的评论" class="text"></textarea>
+            </form>
+          </div>
+        </div>
+
+        <div class="ft clearfix">
+          <div class="face">
+            <a href="javascript:;" class="trigger">表情</a>
+          </div>
+          <div class="right-action">
+            <div class="login-info">
+            <span class="user-id">
+              <a href="javascript:;">用户6515333989</a>
+            </span>
+              <span class="sep">|</span>
+              <a href="javascript:;" class="logout">退出</a>
+            </div>
+            <a class="btn" href="javascript:;">
+              发布
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 评论内容 -->
+      <h3 style="padding-left: 13px;margin-bottom: 13px">最新评论</h3>
+
+      <ul class="comment-list">
+        <li class="comment-lists clearfix">
+          <div class="user-head">
+            <img class="head" src="../image/新浪微博-头像.jpg" alt="">
+          </div>
+
+          <div class="comment-list-info">
+            <div class="list-name">
+              <span class="user-id">uamworld</span>
+              <span class="location">江苏南京</span>
+            </div>
+            <p class="content">这是送的</p>
+            <div class="list-time">
+              <span class="time">今天09:09</span>
+              <span class="btns">
+                <a href="javascript:;" class="vote">赞7</a>
+                <a href="javascript;:" class="reply">回复</a>
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var btn = document.querySelector('.btn');
+      var commentList = document.querySelector('.comment-list');
+      var lists = document.querySelector('.comment-lists');
+      btn.addEventListener('click', function () {
+        var newComment = lists.cloneNode();
+        commentList.appendChild(newComment);
+        // user-head
+        var userHead = document.querySelector('.user-head');
+        var newUserHead = userHead.cloneNode();
+        newComment.appendChild(newUserHead);
+
+        var head = document.querySelector('.head');
+        var newHead = head.cloneNode();
+        newUserHead.appendChild(newHead);
+        newHead.src = '../image/新浪微博-头像.jpg';
+
+        //comment-list-info
+        var commentListInfo = document.querySelector('.comment-list-info');
+        var newCommentListInfo = commentListInfo.cloneNode();
+        newComment.appendChild(newCommentListInfo);
+
+        var listName = document.querySelector('.list-name');
+        var userId = document.querySelector('.user-id');
+        var location = document.querySelector('.location');
+        var newListName = listName.cloneNode();
+        var newUserId = userId.cloneNode();
+        var newLocation = location.cloneNode();
+        newCommentListInfo.appendChild(newListName);
+        newListName.appendChild(newUserId);
+        newListName.appendChild(newLocation);
+        newUserId.innerHTML = '11233212';
+        newLocation.innerHTML = '宁夏银川';
+
+        /* p */
+        var p = document.querySelector('p');
+        var newP = p.cloneNode();
+        newCommentListInfo.appendChild(newP);
+        var text = document.querySelector('.text');
+        newP.innerHTML = text.value;
+
+        /* list-time */
+        var listTime = document.querySelector('.list-time');
+        var time = document.querySelector('.time');
+        var btns = document.querySelector('.btns');
+        var vote = document.querySelector('.vote');
+        var reply = document.querySelector('.reply');
+        var newListTime = listTime.cloneNode();
+        var newTime = time.cloneNode();
+        var newBtns = btns.cloneNode();
+        var newVote = vote.cloneNode();
+        var newReply = reply.cloneNode();
+        newCommentListInfo.appendChild(newListTime);
+        newListTime.appendChild(newTime);
+        newListTime.appendChild(newBtns);
+        newBtns.appendChild(newVote);
+        newBtns.appendChild(newReply);
+        newTime.innerHTML = '今天15点';
+        newVote.innerHTML = '赞10';
+        newReply.innerHTML = '回复';
+
+        console.log('hello')
+      });
+    </script>
+
+  </body>
+</html>

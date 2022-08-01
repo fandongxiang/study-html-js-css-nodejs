@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>guess number</title>
+  <script>
+    // random generate a number
+    // when user answer > the number,alert 'big' ,else 'small'
+    function getRan(a,b) {
+      ranNum = a + Math.round((b - a) * Math.random());
+      return ranNum;
+    };
+    var number = getRan(1,10);
+    var Unum = prompt('Can you guess number in my heart ?');
+    while (Unum != number) {
+      if (parseInt(Unum) > number) {
+        alert('It\'s big !');
+      } else {
+        alert('It\'s small !')
+      };
+      var Unum = prompt('Can you guess number in my heart ?');
+    };
+    alert('congrantulation!')
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
